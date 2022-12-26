@@ -28,7 +28,7 @@ function creaAlumno() {
 function menuMaterias() {
   let opcion = 0;
   let menu =
-    "Ingrese Materia a calificar\n 1 - Matematicas\n 2 - Fisica\n 3 - Historia\n 4 - Ver boletin\n 0 - para salir";
+    "Ingrese Materia a calificar\n 1 - Matematicas\n 2 - Fisica\n 3 - Historia\n 4 - Ver boletin\n 5 - Calificar otro alumno\n 0 - para salir";
 
   let nota = 0;
   let notaMat = 0;
@@ -57,6 +57,9 @@ function menuMaterias() {
         break;
       case 4:
         VerBoletin(notaMat, notaFis, notaHis);
+        break;
+      case 5:
+        menuPrincipal()
         break;
       default:
         alert("opcion incorrecta");
