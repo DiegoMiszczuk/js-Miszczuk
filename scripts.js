@@ -10,7 +10,7 @@ class Materia {
   nota2 = 0;
   nota3 = 0;
   promedio() {
-    return (this.nota1 + this.nota2 + this.nota3) / 3;
+    return ((this.nota1 + this.nota2 + this.nota3) / 3).toFixed(2);
   }
 }
 const _materias = [];
@@ -18,6 +18,7 @@ const _materias = [];
 _materias.push(new Materia("Matematicas"));
 _materias.push(new Materia("Lengua"));
 _materias.push(new Materia("Historia"));
+
 
 class Alumno {
   constructor(nombre, dni) {
@@ -30,41 +31,86 @@ const CargarNotas =(dni)=>{
   for (let index = 0; index < alumnos.length; index++) {
     if (dni === alumnos[index].dni) {
       for (let i = 0; i < alumnos[index].materias.length; i++) {
-        alumnos[index].materias[i].nota1 = parseInt(prompt('Ingrese la nota 1 '+ alumnos[index].materias[i].nombre))
-       alumnos[index].materias[i].nota2 = parseInt(prompt('Ingrese la nota 2 '+alumnos[index].materias[i].nombre))
-       alumnos[index].materias[i].nota3 = parseInt(prompt('Ingrese la nota 3 '+alumnos[index].materias[i].nombre))
-        
+        alumnos[index].materias[i].nota1 = Number.parseInt(prompt("Ingrese la nota 1 de"+ alumnos[index].materias[i].nombre))
+        alumnos[index].materias[i].nota2 = Number.parseInt(prompt("Ingrese la nota 2 de"+ alumnos[index].materias[i].nombre))
+        alumnos[index].materias[i].nota3 = Number.parseInt(prompt("Ingrese la nota 3 de"+ alumnos[index].materias[i].nombre))
+       
       }
        
+     }
+
     }
     
   }
 
-  alert(alumnos[0].materias)
+  // alert(alumnos[0].materias)
+  // console.log(alumnos[0].materias)
+
+const verPromedios =(dni)=>{
+  for (let index = 0; index < alumnos.length; index++) {
+    if (dni === alumnos[index].dni) {
+      for (let i = 0; i < alumnos[index].materias.length; i++) {
+        alert("Alumno: "+ alumnos[index].nombre +"\n" + "Calificacion final de " +_materias[i].nombre +": "
+         + alumnos[index].materias[i].promedio(alumnos[index].materias[i].nota1,alumnos[index].materias[i].nota2,alumnos[index].materias[i].nota3))
+          
+      }
+      
+    }
+    // else {
+    //   alert("Lo sentimos, no encontramos alumno con ese DNI")
+    //   menuPrincipal()
+    // }
+    
+  }
 }
+console.log(_materias)
+
 menuPrincipal();
 
 function menuPrincipal() {
   let opcion = 0;
   let menu =
-    "Bienvenido al Sistema de calificaciones\n Ingrese: \n 1 - Calificar\n 0 - para salir";
+    "Bienvenido al Sistema de calificaciones\n Ingrese: \n 1 - Crear Alumno\n 2 - Calificar alumno\n 3 - Ver Promedios\n 4 - Buscar alumno\n 0 - para salir";
   opcion = Number(prompt(menu));
 
   switch (opcion) {
     case 0:
-      CargarNotas(prompt('Ingrese el DNI'))
-      menuPrincipal();
+      alert("gracias")
       break;
     case 1:
       creaAlumno(prompt("ingrese nombre"), prompt("ingrese dni"));
+      alert("Alumno creado con exito")
       menuPrincipal();
       break;
+    case 2:
+      CargarNotas(prompt("Ingrese el DNI"))
+      // alert("cargar materias para alumno" + alumnos.nombre)
+      menuPrincipal();
+      break;
+    case 3:
+        verPromedios(prompt("Ingrese el DNI"))
+        menuPrincipal()
+        break;  
+    case 4:
+      alert("hola")
+      alumnos.forEach( (nombre)=> {
+        alert(alumnos.nombre)
+        // console.log(num)
+    } )
+    
+      // const resultado = alumnos.find((el) => el.nombre === prompt("ingrese nombre a buscar"))
+      //   console.log(resultado)
+          // CargarNotas(prompt("Ingrese el DNI"))
+          // // alert("cargar materias para alumno" + alumnos.nombre)
+          // menuPrincipal();
+        break;
+    
     default:
       alert("Opcion incorrecta");
       menuPrincipal();
   }
 }
-
+// console.log(alumnos)
 
 
 
