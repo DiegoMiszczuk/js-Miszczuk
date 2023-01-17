@@ -78,15 +78,14 @@ const verPromedios =(dni)=>{
     if (dni === alumnos[index].dni) {
       for (let i = 0; i < alumnos[index].materias.length; i++) {
         alert("Alumno: "+ alumnos[index].nombre +"\n" + "Calificacion final de " +_materias[i].nombre +": "
-         + _materias[index].promedio(
-          alumnos[index].materias[i].nota1,
-          alumnos[index].materias[i].nota2,
-          alumnos[index].materias[i].nota3))
+         + alumnos[index].materias[index].promedio(
+          alumnos[index].materias[index].nota1,
+          alumnos[index].materias[index].nota2,
+          alumnos[index].materias[index].nota3))
       } 
     }
   }
 }
-
 
 
 
@@ -95,7 +94,7 @@ menuPrincipal();
 function menuPrincipal() {
   let opcion = 0;
   let menu =
-    "Bienvenido al Sistema de calificaciones\n Ingrese: \n 1 - Crear Alumno\n 2 - Calificar alumno\n 3 - Ver Promedios\n 4 - Buscar alumno por DNI\n 5 - Listado de Alumnos \n 0 - para salir";
+    "Bienvenido al Sistema de calificaciones\n Ingrese: \n 1 - Crear Alumno\n 2 - Calificar alumno\n 3 - Ver Promedios\n 4 - Buscar alumno por DNI\n 5 - Listado de Alumnos\n 0 - para salir";
   opcion = Number(prompt(menu));
 
   switch (opcion) {
