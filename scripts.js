@@ -31,8 +31,9 @@ class Alumno {
     
     this.dni = dni;
   }
-  materias = _materias
+  materias = [new Materia("matematica"),new Materia("lengua"),new Materia("historia")]
 }
+
 const CargarNotas =(dni)=>{
   for (let index = 0; index < alumnos.length; index++) {
     if (dni === alumnos[index].dni) {
@@ -40,13 +41,9 @@ const CargarNotas =(dni)=>{
         alumnos[index].materias[i].nota1 = Number.parseInt(prompt("Ingrese la nota 1 de "+ alumnos[index].nombre +" en " + alumnos[index].materias[i].nombre))
         alumnos[index].materias[i].nota2 = Number.parseInt(prompt("Ingrese la nota 2 de "+ alumnos[index].nombre +" en " + alumnos[index].materias[i].nombre))
         alumnos[index].materias[i].nota3 = Number.parseInt(prompt("Ingrese la nota 3 de "+ alumnos[index].nombre +" en " + alumnos[index].materias[i].nombre))
-       
       }
-       
      }
-
     }
-    
   }
 
 
@@ -58,8 +55,7 @@ const CargarNotas =(dni)=>{
           alert("El Dni Nro: "+ alumnos[index].dni + " Esta registrado al Alumno: " +alumnos[index].nombre)
         }
       }
-     
-    } else {
+     } else {
       alert(" No se encuentra el Dni consultado.")
     }
   }
@@ -78,7 +74,7 @@ const verPromedios =(dni)=>{
     if (dni === alumnos[index].dni) {
       for (let i = 0; i < alumnos[index].materias.length; i++) {
         alert("Alumno: "+ alumnos[index].nombre +"\n" + "Calificacion final de " +_materias[i].nombre +": "
-         + alumnos[index].materias[index].promedio(
+         + alumnos[index].materias[i].promedio(
           alumnos[index].materias[i].nota1,
           alumnos[index].materias[i].nota2,
           alumnos[index].materias[i].nota3))          
