@@ -79,9 +79,9 @@ const verPromedios =(dni)=>{
       for (let i = 0; i < alumnos[index].materias.length; i++) {
         alert("Alumno: "+ alumnos[index].nombre +"\n" + "Calificacion final de " +_materias[i].nombre +": "
          + alumnos[index].materias[index].promedio(
-          alumnos[index].materias[index].nota1,
-          alumnos[index].materias[index].nota2,
-          alumnos[index].materias[index].nota3))
+          alumnos[index].materias[i].nota1,
+          alumnos[index].materias[i].nota2,
+          alumnos[index].materias[i].nota3))          
       } 
     }
   }
