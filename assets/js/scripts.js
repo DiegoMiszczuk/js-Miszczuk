@@ -28,7 +28,6 @@ _materias.push(new Materia("Historia"));
 class Alumno {
   constructor(nombre, dni) {
     this.nombre = nombre;
-
     this.dni = dni;
   }
   materias = [new Materia("matematica"), new Materia("lengua"), new Materia("historia")]
@@ -123,3 +122,4 @@ function menuPrincipal() {
       menuPrincipal();
   }
 }
+
