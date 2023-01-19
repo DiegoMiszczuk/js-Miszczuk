@@ -1,11 +1,11 @@
 
 let alumnos = [];
- 
 
-const creaAlumno = (nombre,dni) => {
-  return alumnos.push(new Alumno(nombre,dni))
- 
- }
+
+const creaAlumno = (nombre, dni) => {
+  return alumnos.push(new Alumno(nombre, dni))
+
+}
 
 class Materia {
   constructor(nombreMateria) {
@@ -28,62 +28,60 @@ _materias.push(new Materia("Historia"));
 class Alumno {
   constructor(nombre, dni) {
     this.nombre = nombre;
-    
+
     this.dni = dni;
   }
-  materias = [new Materia("matematica"),new Materia("lengua"),new Materia("historia")]
+  materias = [new Materia("matematica"), new Materia("lengua"), new Materia("historia")]
 }
 
-const CargarNotas =(dni)=>{
+const CargarNotas = (dni) => {
   for (let index = 0; index < alumnos.length; index++) {
     if (dni === alumnos[index].dni) {
       for (let i = 0; i < alumnos[index].materias.length; i++) {
-        alumnos[index].materias[i].nota1 = Number.parseInt(prompt("Ingrese la nota 1 de "+ alumnos[index].nombre +" en " + alumnos[index].materias[i].nombre))
-        alumnos[index].materias[i].nota2 = Number.parseInt(prompt("Ingrese la nota 2 de "+ alumnos[index].nombre +" en " + alumnos[index].materias[i].nombre))
-        alumnos[index].materias[i].nota3 = Number.parseInt(prompt("Ingrese la nota 3 de "+ alumnos[index].nombre +" en " + alumnos[index].materias[i].nombre))
+        alumnos[index].materias[i].nota1 = Number.parseInt(prompt("Ingrese la nota 1 de " + alumnos[index].nombre + " en " + alumnos[index].materias[i].nombre))
+        alumnos[index].materias[i].nota2 = Number.parseInt(prompt("Ingrese la nota 2 de " + alumnos[index].nombre + " en " + alumnos[index].materias[i].nombre))
+        alumnos[index].materias[i].nota3 = Number.parseInt(prompt("Ingrese la nota 3 de " + alumnos[index].nombre + " en " + alumnos[index].materias[i].nombre))
       }
-     }
-    }
-  }
-
-
-  const busquedaDni = (dni) =>{
-    
-    if (alumnos.find((el) => el.dni === dni)) {
-      for (let index = 0; index < alumnos.length; index++) {
-        if (dni === alumnos[index].dni ) {
-          alert("El Dni Nro: "+ alumnos[index].dni + " Esta registrado al Alumno: " +alumnos[index].nombre)
-        }
-      }
-     } else {
-      alert(" No se encuentra el Dni consultado.")
-    }
-  }
-
-
-  const listadoAlumnos = () =>{
-    const nombres = alumnos.map((el) => el.nombre)
-    alert("listado de alumnos registrados: " + "\n" + nombres.join(", \n"))
-  };
-
-
-
-    
-const verPromedios =(dni)=>{
-  for (let index = 0; index < alumnos.length; index++) {
-    if (dni === alumnos[index].dni) {
-      for (let i = 0; i < alumnos[index].materias.length; i++) {
-        alert("Alumno: "+ alumnos[index].nombre +"\n" + "Calificacion final de " +_materias[i].nombre +": "
-         + alumnos[index].materias[i].promedio(
-          alumnos[index].materias[i].nota1,
-          alumnos[index].materias[i].nota2,
-          alumnos[index].materias[i].nota3))          
-      } 
     }
   }
 }
 
 
+const busquedaDni = (dni) => {
+
+  if (alumnos.find((el) => el.dni === dni)) {
+    for (let index = 0; index < alumnos.length; index++) {
+      if (dni === alumnos[index].dni) {
+        alert("El Dni Nro: " + alumnos[index].dni + " Esta registrado al Alumno: " + alumnos[index].nombre)
+      }
+    }
+  } else {
+    alert(" No se encuentra el Dni consultado.")
+  }
+}
+
+
+const listadoAlumnos = () => {
+  const nombres = alumnos.map((el) => el.nombre)
+  alert("listado de alumnos registrados: " + "\n" + nombres.join(", \n"))
+};
+
+
+
+
+const verPromedios = (dni) => {
+  for (let index = 0; index < alumnos.length; index++) {
+    if (dni === alumnos[index].dni) {
+      for (let i = 0; i < alumnos[index].materias.length; i++) {
+        alert("Alumno: " + alumnos[index].nombre + "\n" + "Calificacion final de " + _materias[i].nombre + ": "
+          + alumnos[index].materias[i].promedio(
+            alumnos[index].materias[i].nota1,
+            alumnos[index].materias[i].nota2,
+            alumnos[index].materias[i].nota3))
+      }
+    }
+  }
+}
 
 menuPrincipal();
 
@@ -95,31 +93,31 @@ function menuPrincipal() {
 
   switch (opcion) {
     case 0:
-        alert("Gracias por utilizar el sistema de calificaciones, Hasta pronto!")
-        break;
+      alert("Gracias por utilizar el sistema de calificaciones, Hasta pronto!")
+      break;
     case 1:
-        creaAlumno((prompt("ingrese nombre")).toLowerCase() , Number.parseInt(prompt("ingrese dni")));
-        alert("Alumno creado con exito")
-        menuPrincipal();
-      
-        break;
+      creaAlumno((prompt("ingrese nombre")).toLowerCase(), Number.parseInt(prompt("ingrese dni")));
+      alert("Alumno creado con exito")
+      menuPrincipal();
+
+      break;
     case 2:
-        CargarNotas(Number.parseInt(prompt("Ingrese el DNI")))
-        menuPrincipal();
-        break;
+      CargarNotas(Number.parseInt(prompt("Ingrese el DNI")))
+      menuPrincipal();
+      break;
     case 3:
-        verPromedios(Number.parseInt(prompt("Ingrese el DNI")))
-        menuPrincipal()
-        break;  
-    case 4: 
-        busquedaDni(Number.parseInt(prompt("Ingrese el DNI")))
-        menuPrincipal()
-        break;
-    case 5: 
-        listadoAlumnos()
-        menuPrincipal()
-        break;  
-    
+      verPromedios(Number.parseInt(prompt("Ingrese el DNI")))
+      menuPrincipal()
+      break;
+    case 4:
+      busquedaDni(Number.parseInt(prompt("Ingrese el DNI")))
+      menuPrincipal()
+      break;
+    case 5:
+      listadoAlumnos()
+      menuPrincipal()
+      break;
+
     default:
       alert("Opcion incorrecta! ")
       menuPrincipal();
