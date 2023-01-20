@@ -135,28 +135,28 @@
         </div>
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form id="alumnoNuevo" action="" method="" role="form" class="">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
+                  <input type="text" name="name" class="form-control" id="nombre" placeholder="Nombre" required onclick="limpiar()">
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="Apellido" placeholder="Apellido" required>
+                  <input type="text" class="form-control" name="apellido" id="Apellido" placeholder="Apellido" onclick="limpiar()" >
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="dni" placeholder="Dni" required>
+                <input type="text" class="form-control" name="subject" id="dni" placeholder="Dni" required onclick="limpiar()" >
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="Email" placeholder="Email" required>
+                <input type="text" class="form-control" name="subject" id="Email" placeholder="Email" onclick="limpiar()" >
               </div>
               
               <div class="my-3">
-                <div class="loading">Cargando</div>
+                <!-- <div class="loading">Cargando</div> -->
                 <div class="error-message"></div>
-                <div class="sent-message">Alumno creado con exito. Gracias!</div>
+                <div id="mensaje" class="sent-message">Alumno creado con exito. Gracias!</div>
               </div>
-              <div class="text-center"><button type="submit">Guardar Alumno</button></div>
+              <div class="text-center "><button id="guardarAlumno" class="button" type="button" onclick="nuevoAlumno()">Guardar Alumno</button></div>
             </form>
 
           </div>
@@ -206,23 +206,23 @@
             </div>
             <!-- <h3>Ingrese Dni del Alumno</h3> -->
             <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
-            <input class="margenIzq margenBttm entradaNotas" type="text" placeholder="Ingrese Dni">
+            <input id="ingDni" class="margenIzq margenBttm entradaNotas" type="text" placeholder="Ingrese Dni">
             <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-book icono"></i></div>
             <select class="form-select form-select-sm entradaNotas" aria-label="Default select example">
               <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
               <option selected>Seleccione Materia</option>
-              <option value="1">Matematicas</option>
-              <option value="2">Historia</option>
-              <option value="3">Lengua</option>
+              <option id="matematica" value="1">Matematicas</option>
+              <option id="historia" value="2">Historia</option>
+              <option id="lengua" value="3">Lengua</option>
             </select>
             <div class="icon-box mt-5 mt-lg-0 container" data-aos="zoom-in" data-aos-delay="150">
               
               
               <!-- <h4 id="matematica">Matematicas</h4> -->
               <p class="textEvaluacion">Ingrese las notas de las 3 instancias de evaluacion</p>
-              <input class="entradaNotas container" type="text" placeholder="Ingrese nota 1">
-              <input class="entradaNotas" type="text" placeholder="Ingrese nota 2">
-              <input class="entradaNotas" type="text" placeholder="Ingrese nota 3">
+              <input id="nota1" class="entradaNotas container" type="text" placeholder="Ingrese nota 1">
+              <input id="nota2" class="entradaNotas" type="text" placeholder="Ingrese nota 2">
+              <input id="nota3" class="entradaNotas" type="text" placeholder="Ingrese nota 3">
             </div>
             <!-- <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
               <i class="bi bi-book icono"></i>
@@ -240,7 +240,7 @@
               <input class="entradaNotas" type="text" placeholder="Ingrese nota 2">
               <input class="entradaNotas" type="text" placeholder="Ingrese nota 3">
             </div> -->
-            <div class="text-center "><button class="btnCargarNotas Contact" type="submit">Cargar notas</button></div>
+            <div id="cargarNotas" class="text-center "><button class="btnCargarNotas Contact" type="button" onclick="CargarNotas(dni)">Cargar notas</button></div>
         </div>
 
       </div>

@@ -1349,7 +1349,7 @@ section {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1357,6 +1357,10 @@ section {
   padding: 15px;
   font-weight: 600;
 }
+/* .sent-message2{
+  display: flex;
+} */
+
 
 .contact .php-email-form .loading {
   display: none;
@@ -1407,7 +1411,14 @@ section {
   transition: 0.4s;
   border-radius: 4px;
 }
-
+.button {
+  background: #ffc451;
+  border: 0;
+  padding: 10px 24px;
+  color: #151515;
+  transition: 0.4s;
+  border-radius: 4px;
+}
 .contact .php-email-form button[type=submit]:hover {
   background: #ffcd6b;
 }
