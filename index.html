@@ -27,6 +27,8 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Custom CSS File -->
+  <link href="assets/css/styleCustom.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Gp - v4.10.0
@@ -148,6 +150,15 @@
                 <input type="text" class="form-control" name="subject" id="dni" placeholder="Dni" required onclick="limpiar()" >
               </div>
               <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="Email" placeholder="Nacionalidad" onclick="limpiar()" >
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="Email" placeholder="Dirección" onclick="limpiar()" >
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="Email" placeholder="Telefono" onclick="limpiar()" >
+              </div>
+              <div class="form-group mt-3">
                 <input type="text" class="form-control" name="subject" id="Email" placeholder="Email" onclick="limpiar()" >
               </div>
               
@@ -172,26 +183,7 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Clients Section ======= -->
-    <!-- <section id="clients" class="clients">
-      <div class="container" data-aos="zoom-in">
-
-        <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section>End Clients Section -->
+    
 
     <!-- ======= Materias Section ======= -->
     <section id="features" class="features">
@@ -199,70 +191,179 @@
 
         <div id="calificar" class="row">
           <div class="image col-lg-6" style='background-image: url("assets/img/fotor_2023-1-18_8_52_52.jpg");' data-aos="fade-right"></div>
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-            <div class="section-title margenIzq">
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+              <div class="section-title margenIzq margenTop">
               <h2>Calificar Alumno</h2>
               
-            </div>
+              </div>
             <!-- <h3>Ingrese Dni del Alumno</h3> -->
             <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
-            <input id="ingDni" class="margenIzq margenBttm entradaNotas" type="text" placeholder="Ingrese Dni">
+
+            <input id="ingDni" class="form-control margenIzq margenBttm entradaNotas" type="text" placeholder="Ingrese Dni">
+
             <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-book icono"></i></div>
-            <select class="form-select form-select-sm entradaNotas" aria-label="Default select example">
+
+            <select id="matEle" class="form-control form-select form-select-sm entradaNotas" aria-label="Default select example">
+
               <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
-              <option selected>Seleccione Materia</option>
-              <option id="matematica" value="1">Matematicas</option>
-              <option id="historia" value="2">Historia</option>
-              <option id="lengua" value="3">Lengua</option>
+
+              <option  class="form-control"  value="" disabled selected>Seleccione Materia</option>
+
+              <option  id="matematica" class="form-control" value="0">Matematicas</option>
+
+              <option  id="historia" class="form-control" value="1">Historia</option>
+
+              <option  id="lengua" class="form-control" value="2">Lengua</option>
             </select>
-            <div class="icon-box mt-5 mt-lg-0 container" data-aos="zoom-in" data-aos-delay="150">
-              
+            <div class="icon-box mt-5 mt-lg- container" data-aos="zoom-in" data-aos-delay="150"></div>
+
               
               <!-- <h4 id="matematica">Matematicas</h4> -->
+             <div class="col-lg-8 mt-6 mt-lg-0 form-group mt-3"> 
               <p class="textEvaluacion">Ingrese las notas de las 3 instancias de evaluacion</p>
-              <input id="nota1" class="entradaNotas container" type="text" placeholder="Ingrese nota 1">
-              <input id="nota2" class="entradaNotas" type="text" placeholder="Ingrese nota 2">
-              <input id="nota3" class="entradaNotas" type="text" placeholder="Ingrese nota 3">
+              <input id="nota1" class="form-control t entradaNotas" type="text" placeholder="Ingrese nota 1">
+              <input id="nota2" class="form-control entradaNotas" type="text" placeholder="Ingrese nota 2">
+              <input id="nota3" class="form-control entradaNotas" type="text" placeholder="Ingrese nota 3">
             </div>
-            <!-- <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bi bi-book icono"></i>
-              <h4>Lengua</h4>
-              <p>Ingrese las notas de las 3 instancias de evaluacion de Lengua</p>
-              <input class="entradaNotas" type="text" placeholder="Ingrese nota 1">
-              <input class="entradaNotas" type="text" placeholder="Ingrese nota 2">
-              <input class="entradaNotas" type="text" placeholder="Ingrese nota 3">
-            </div>
-            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bi bi-clock-history icono"></i>
-              <h4>Historia</h4>
-              <p>Ingrese las notas de las 3 instancias de evaluacion de Historia</p>
-              <input class="entradaNotas" type="text" placeholder="Ingrese nota 1">
-              <input class="entradaNotas" type="text" placeholder="Ingrese nota 2">
-              <input class="entradaNotas" type="text" placeholder="Ingrese nota 3">
-            </div> -->
-            <div id="cargarNotas" class="text-center "><button class="btnCargarNotas Contact" type="button" onclick="CargarNotas(dni)">Cargar notas</button></div>
+            
+          
+            <div id="cargarNotas" class="text-center "><button id="cargarNotas" class="btnCargarNotas Contact" type="button" onclick="cargarNotas(dni)">Cargar notas</button></div>
         </div>
-
-      </div>
+   </div>
     </section><!-- End Features Section -->
 
  
 
-    <!-- ======= Cta Section ======= -->
+    <!-- ======= inicio de sesión  Section ======= -->
     <section id="cta" class="cta">
       <div class="container" data-aos="zoom-in">
 
         <div class="text-center">
-          <!-- <h3>Iniciar Sesion</h3> -->
+          <!-- <h3>Iniciar Sesión</h3> -->
           <input class="datosSesion cta-btn" type="text" label="Usuario" placeholder="Usuario" la>
           <input class="datosSesion cta-btn" type="text" placeholder="Contraseña">
-          <p> ingresa tus datos de acceso</p>
+          <p> ingresa tus datos de acceso o creá tu cuenta</p>
           <a class="cta-btn datosSesion" href="#">Iniciar sesión</a>
           <a class="cta-btn datosSesion" href="#">Registrarse</a>
         </div>
 
       </div>
-    </section><!-- End Cta Section -->
+    </section><!-- End inicio de sesión Section -->
+
+
+
+     <!-- ======= Buscar alumno ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="assets/img/nuevo-alumno.jpg" class="img-fluid alumnosEnClase" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+             
+    <section id="buscarAlumno" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Buscar alumno</h2>
+          
+        </div>
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form id="" action="" method="" role="form" class="">
+              <div class="row">
+                <!-- <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="" placeholder="Nombre" required onclick="limpiar()">
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="apellido" id="" placeholder="Apellido" onclick="limpiar()" >
+                </div>
+              </div> -->
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="dniBusqueda" placeholder="Dni" required onclick="limpiarBusqueda()" >
+              </div>
+              
+              
+           <div class="my-3">
+                <!-- <div class="loading">Cargando</div> -->
+                <div class="error-message"></div>
+                <div id="mensajebusqueda" class="sent-message">Alumno creado con exito. Gracias!</div>
+              </div>
+              <div class="text-center "><button id="buscarAlumno" class="button" type="button" onclick="busquedaDni(dni)">Buscar</button></div>
+            </form>
+
+              <div id="resultadoBusqueda"class="resultadoBusqueda"></div>
+                <h3 id="nombreBusqueda"></h3>
+                <h2 id="emailBusqueda" ></h2>
+                
+              
+              </div>
+              <div id="contenedorBusqueda" class="form-group mt-3">
+                
+              </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Nuevo alumno -->
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    
+
+    <!-- ======= Promedios Section ======= -->
+    <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
+
+        <div id="calificar" class="row">
+          <div class="image col-lg-6" style='background-image: url("assets/img/fotor_2023-1-18_8_52_52.jpg");' data-aos="fade-right"></div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+              <div class="section-title margenIzq margenTop">
+              <h2>Calificar Alumno</h2>
+              
+              </div>
+            <!-- <h3>Ingrese Dni del Alumno</h3> -->
+            <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
+
+            <input id="dniPromedio" class="form-control margenIzq margenBttm entradaNotas" type="text" placeholder="Ingrese Dni">
+
+            <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-book icono"></i></div>
+
+            <select id="matElePromedio" class="form-control form-select form-select-sm entradaNotas" aria-label="Default select example">
+
+              <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
+
+              <option  class="form-control"  value="" disabled selected>Seleccione Materia</option>
+
+              <option  id="matematica" class="form-control" value="0">Matematicas</option>
+
+              <option  id="historia" class="form-control" value="1">Historia</option>
+
+              <option  id="lengua" class="form-control" value="2">Lengua</option>
+            </select>
+            <div class="icon-box mt-5 mt-lg- container" data-aos="zoom-in" data-aos-delay="150"></div>
+
+              
+              <!-- <h4 id="matematica">Matematicas</h4> -->
+             <!-- <div class="col-lg-8 mt-6 mt-lg-0 form-group mt-3"> 
+              <p class="textEvaluacion">Ingrese las notas de las 3 instancias de evaluacion</p>
+              <input id="nota1" class="form-control t entradaNotas" type="text" placeholder="Ingrese nota 1">
+              <input id="nota2" class="form-control entradaNotas" type="text" placeholder="Ingrese nota 2">
+              <input id="nota3" class="form-control entradaNotas" type="text" placeholder="Ingrese nota 3">
+            </div> -->
+            
+          
+            <div id="" class="text-center "><button id="botonPromedio" class="btnPromedio Contact button" type="button" onclick="verNotasPromedio(dni)">Ver promedio</button></div>
+        </div>
+   </div>
+    </section><!-- End Promedios Section -->
+    
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">

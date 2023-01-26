@@ -13,9 +13,7 @@ body {
   color: #444444;
 }
 
-.textCenter{
-  text-align: center;
-}
+
 a {
   color: #ffc451;
   text-decoration: none;
@@ -51,7 +49,11 @@ h6 {
   border-radius: 4px;
   transition: all 0.4s;
 }
-
+.seleccion{
+  color: #18d26e;
+  width: 300px;
+  overflow: visible;
+}
 .back-to-top i {
   font-size: 28px;
   color: #151515;
@@ -533,9 +535,6 @@ section {
   overflow: hidden;
 }
 
-.section-title {
-  padding-bottom: 40px;
-}
 
 .section-title h2 {
   font-size: 14px;
@@ -572,10 +571,7 @@ section {
 # Nuevo alumno
 --------------------------------------------------------------*/
 
-.alumnosEnClase{
-  margin-top: 80px;
-  /* padding-top: 600px; */
-}
+
 .about .content h3 {
   font-weight: 700;
   font-size: 28px;
@@ -645,36 +641,9 @@ section {
 .features {
   padding-top: 20px;
 }
-.textEvaluacion{
-  margin-top: 30px;
 
-  text-align: center;
-}
-.btnCargarNotas{
-  margin-top: 15px;
-  background: #ffc451;
-  border: 0;
-  padding: 10px 24px;
-  color: #151515;
-  transition: 0.4s;
-  border-radius: 4px;
-  align-items: center;
-}
-.icono{
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.margenIzq{
-  margin-left: 30px;
-}
-.margenBttm{
-  margin-bottom: 20px;
-}
-.entradaNotas{
-  width: 150px;
-  margin-left: 20px;
-  margin-top: 20px;
-}
+
+
 
 .features .icon-box {
   padding-left: 15px;
@@ -1087,19 +1056,7 @@ section {
   background-size: cover;
   position: relative;
 }
-.tituloEquipo p{
-  
-    font-size: 14px;
-    font-weight: 500;
-    padding: 0;
-    line-height: 1px;
-    margin: 0 0 5px 0;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    /* color: #aaaaaa; */
-    font-family: "Poppins", sans-serif;
-    color: yellow;
-}
+
 
 .testimonials::before {
   content: "";

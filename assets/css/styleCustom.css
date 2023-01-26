@@ -1,0 +1,99 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+.textCenter{ 
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+.section-title {
+    padding-bottom: 40px;
+}
+
+/*--------------------------------------------------------------
+# Nuevo alumno
+--------------------------------------------------------------*/
+
+.alumnosEnClase{
+    margin-top: 80px;
+}
+
+/*--------------------------------------------------------------
+# calificar alumnos
+--------------------------------------------------------------*/
+
+
+.textEvaluacion{
+    margin-top: 30px;
+    text-align: center;
+}
+.entradaNotas{
+    width: 150px;
+    margin-left: 20px;
+    margin-top: 20px;
+    align-items: center;
+} 
+.icono{
+    margin-left: 20px;
+    margin-right: 20px;
+} 
+.btnCargarNotas{
+    margin-top: 15px;
+    background: #ffc451;
+    border: 0;
+    padding: 10px 24px;
+    color: #151515;
+    transition: 0.4s;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.margenIzq{
+    margin-left: 30px;
+}
+.margenBttm{
+    margin-bottom: 20px;
+}  
+.margenTop{
+    margin-top: 80px;
+}
+
+/*--------------------------------------------------------------
+# Equipo
+--------------------------------------------------------------*/
+
+.tituloEquipo p{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+    line-height: 1px;
+    margin: 0 0 5px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* color: #aaaaaa; */
+    font-family: "Poppins", sans-serif;
+    color: yellow;
+}
+
+/*--------------------------------------------------------------
+# buscar alumno
+--------------------------------------------------------------*/
+
+#contenedorBusqueda{
+
+    border: 1px solid rgb(199, 227, 236);
+    border-radius: 5px;
+    width: 500px;
+    height: 210px;
+    background-color:w;
+}
+
+
+.enLinea{
+    display: inline;
+    margin-left: 5px;
+    margin-top: 10px;
+}
