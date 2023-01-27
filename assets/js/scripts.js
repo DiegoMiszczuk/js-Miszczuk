@@ -1,11 +1,8 @@
-
 let alumnos = [];
 
-
 const creaAlumno = (nombre, dni) => {
-  return alumnos.push(new Alumno(nombre, dni))
-
-}
+  return alumnos.push(new Alumno(nombre, dni));
+};
 
 /*--------------------------------------------------------------
 # Crear Materias
@@ -44,62 +41,61 @@ class Alumno {
     // this.nacionalidad = nacionalidad;
     // this.direccion = direccion;
     // this.telefono = telefono;
-
   }
-  materias = [new Materia("matematica"), new Materia("lengua"), new Materia("historia")]
+  materias = [
+    new Materia("matematica"),
+    new Materia("lengua"),
+    new Materia("historia"),
+  ];
 }
 
 /*--------------------------------------------------------------
 # Fin Crear Alumno
 --------------------------------------------------------------*/
 
-
 // function a() {
 //   alert(dniIngresado.value)
 //   console.dir(dniIngresado)
 // }
- 
+
 // let materia = document.getElementById("matEle")
 // alert(materia.value)
 
- 
 // function a() {
 //   console.dir(dniIngresado.value)
 // }
 
-
 // console.log(dni)
-
 
 /*--------------------------------------------------------------
 # Calificar Alumno
 --------------------------------------------------------------*/
 
 const cargarNotas = () => {
-  let opcionMateria = document.getElementById("matEle")
-  materiaElegida = opcionMateria.value
-  console.dir(materiaElegida)
- 
-  let dniIngresado = document.getElementById("ingDni")
-  let dni = dniIngresado.value
+  let opcionMateria = document.getElementById("matEle");
+  materiaElegida = opcionMateria.value;
+  console.dir(materiaElegida);
+
+  let dniIngresado = document.getElementById("ingDni");
+  let dni = dniIngresado.value;
   for (let index = 0; index < alumnos.length; index++) {
-        if (dni === alumnos[index].dni) {
-          let calificacion1 = document.getElementById("nota1")
-          let notaInst1 = calificacion1.value
-          let calificacion2 = document.getElementById("nota2")
-          let notaInst2 = calificacion2.value
-          let calificacion3 = document.getElementById("nota3")
-          let notaInst3 = calificacion3.value
-          
-            alumnos[index].materias[materiaElegida].nota1 = notaInst1
-            alumnos[index].materias[materiaElegida].nota2 = notaInst2
-            alumnos[index].materias[materiaElegida].nota3 = notaInst3
-            console.log(alumnos)
-            
-          
-        }
-}
-}
+    if (dni === alumnos[index].dni) {
+      let calificacion1 = document.getElementById("nota1");
+      let notaInst1 = calificacion1.value;
+      let calificacion2 = document.getElementById("nota2");
+      let notaInst2 = calificacion2.value;
+      let calificacion3 = document.getElementById("nota3");
+      let notaInst3 = calificacion3.value;
+
+      alumnos[index].materias[materiaElegida].nota1 = notaInst1;
+      alumnos[index].materias[materiaElegida].nota2 = notaInst2;
+      alumnos[index].materias[materiaElegida].nota3 = notaInst3;
+      console.log(alumnos);
+      let reset = document.getElementById("calificar");
+      calificar.reset();
+    }
+  }
+};
 
 /*--------------------------------------------------------------
 # Fin calificar alumno
@@ -132,7 +128,6 @@ const cargarNotas = () => {
 //   }
 // }
 
-
 // const busquedaDni = (dni) => {
 
 //   if (alumnos.find((el) => el.dni === dni)) {
@@ -146,7 +141,6 @@ const cargarNotas = () => {
 //   }
 // }
 
-
 // const listadoAlumnos = () => {
 //   const nombres = alumnos.map((el) => el.nombre)
 //   alert("listado de alumnos registrados: " + "\n" + nombres.join(", \n"))
@@ -155,9 +149,8 @@ const cargarNotas = () => {
 /*--------------------------------------------------------------
 # Ver promedios
 --------------------------------------------------------------*/
-let dniPromedio = document.getElementById("dniPromedio")
- let dni = dniPromedio.value
-
+// let dniPromedio = document.getElementById("dniPromedio")
+//  let dni = dniPromedio.value
 
 // const verPromedios = (dni) => {
 //   for (let index = 0; index < alumnos.length; index++) {
@@ -178,42 +171,44 @@ let dniPromedio = document.getElementById("dniPromedio")
 # Ver promedios
 --------------------------------------------------------------*/
 const verNotasPromedio = () => {
-  let opcionMateriaPromedio = document.getElementById("matElePromedio")
-  materiaElegidaPromedio = opcionMateriaPromedio.value
-   console.dir(materiaElegidaPromedio)
- 
-  let dniIngresadoPromedio = document.getElementById("dniPromedio")
-  let dni = dniIngresadoPromedio.value
+  let opcionMateriaPromedio = document.getElementById("matElePromedio");
+  materiaElegidaPromedio = opcionMateriaPromedio.value;
+  console.dir(materiaElegidaPromedio);
+
+  let dniIngresadoPromedio = document.getElementById("dniPromedio");
+  let dni = dniIngresadoPromedio.value;
   for (let index = 0; index < alumnos.length; index++) {
-        if (dni === alumnos[index].dni) {
-          for (let i = 0; i < alumnos[index].materias.length; i++) {
-                    alert(
-                      + alumnos[index].materias[i].promedio(
-                        alumnos[index].materias[i].nota1,
-                        alumnos[index].materias[i].nota2,
-                        alumnos[index].materias[i].nota3))
-                  }
-          
-          
-          // let calificacion1 = document.getElementById("nota1")
-          // let notaInst1 = calificacion1.value
-          // let calificacion2 = document.getElementById("nota2")
-          // let notaInst2 = calificacion2.value
-          // let calificacion3 = document.getElementById("nota3")
-          // let notaInst3 = calificacion3.value
-          // alert(alumnos[index].materias[materiaElegidaPromedio].nota1)
-          // alert(alumnos[index].materias[materiaElegidaPromedio].promedio(alumnos[index].materias[materiaElegidaPromedio].nota1,alumnos[index].materias[materiaElegidaPromedio].nota2,alumnos[index].materias[materiaElegidaPromedio].nota3))
-          
-          
-            // alumnos[index].materias[materiaElegida].nota1 = notaInst1
-            // alumnos[index].materias[materiaElegida].nota2 = notaInst2
-            // alumnos[index].materias[materiaElegida].nota3 = notaInst3
-            // console.log(alumnos)
-            
-          
-        }
-}
-}
+    if (dni === alumnos[index].dni) {
+      for (let i = 0; i < alumnos[index].materias.length; i++) {
+        console.log(alumnos[index].materias[i]);
+        console.log(alumnos[index].materias[i].nota1);
+        console.log(alumnos[index].materias[i].nota2);
+        console.log(alumnos[index].materias[i].nota3);
+        alert(
+          +alumnos[index].materias[i].promedio(
+            alumnos[index].materias[i].nota1,
+            alumnos[index].materias[i].nota2,
+            alumnos[index].materias[i].nota3
+          )
+        );
+      }
+
+      // let calificacion1 = document.getElementById("nota1")
+      // let notaInst1 = calificacion1.value
+      // let calificacion2 = document.getElementById("nota2")
+      // let notaInst2 = calificacion2.value
+      // let calificacion3 = document.getElementById("nota3")
+      // let notaInst3 = calificacion3.value
+      // alert(alumnos[index].materias[materiaElegidaPromedio].nota1)
+      // alert(alumnos[index].materias[materiaElegidaPromedio].promedio(alumnos[index].materias[materiaElegidaPromedio].nota1,alumnos[index].materias[materiaElegidaPromedio].nota2,alumnos[index].materias[materiaElegidaPromedio].nota3))
+
+      // alumnos[index].materias[materiaElegida].nota1 = notaInst1
+      // alumnos[index].materias[materiaElegida].nota2 = notaInst2
+      // alumnos[index].materias[materiaElegida].nota3 = notaInst3
+      // console.log(alumnos)
+    }
+  }
+};
 
 // menuPrincipal();
 
@@ -256,106 +251,116 @@ const verNotasPromedio = () => {
 //   }
 // }
 
-
 // let nombre = document.getElementById("nombre")
 // nombre.addEventListener("input" ,()=>{
 //  console.log(nombre.innerHTML)
 // })
 
-
 /*--------------------------------------------------------------
 # Nuevo Alumno
 --------------------------------------------------------------*/
 function nuevoAlumno() {
-  
-  alumnos.push(new Alumno(document.getElementById("nombre").value, document.getElementById("dni").value))
-  alumnoNuevo.reset()
-  verMensaje()
-  const alumnosJson =JSON.stringify(alumnos)
-  localStorage.setItem("alumnos", alumnosJson)
-  
-  console.log(alumnos)
-  
+  alumnos.push(
+    new Alumno(
+      document.getElementById("nombre").value,
+      document.getElementById("dni").value
+    )
+  );
+  alumnoNuevo.reset();
+  verMensaje();
+  const alumnosJson = JSON.stringify(alumnos);
+  localStorage.setItem("alumnos", alumnosJson);
+
+  console.log(alumnos);
 }
 
 function verMensaje() {
-  let guardarAlumno = document.getElementById("guardarAlumno")
-  mensaje.classList.add("d-block")
-  
+  let guardarAlumno = document.getElementById("guardarAlumno");
+  mensaje.classList.add("d-block");
 }
 
 function limpiar() {
-  mensaje.classList.remove("d-block")
+  mensaje.classList.remove("d-block");
 }
-
 
 /*--------------------------------------------------------------
 # fin nuevo alumno
 --------------------------------------------------------------*/
 
-
 /*--------------------------------------------------------------
 #Buscar Alumno
 --------------------------------------------------------------*/
 
-
-  const busquedaDni = () => {
-    let dniBusqueda = document.getElementById("dniBusqueda")
-    let dniBuscado = dniBusqueda.value
+const busquedaDni = () => {
+  let dniBusqueda = document.getElementById("dniBusqueda");
+  let dniBuscado = dniBusqueda.value;
 
   if (alumnos.find((el) => el.dni === dniBuscado)) {
     for (let index = 0; index < alumnos.length; index++) {
       if (dniBuscado === alumnos[index].dni) {
-      let resultadoBusqueda = document.getElementById("contenedorBusqueda")
-      resultadoBusqueda.innerHTML = `<p class="enLinea" >Nombre:<p class="enLinea">${alumnos[index].nombre}</p></p>
+        let resultadoBusqueda = document.getElementById("contenedorBusqueda");
+        resultadoBusqueda.innerHTML = `<p class="enLinea" >Nombre:<p class="enLinea">${alumnos[index].nombre}</p></p>
       <p class="enLinea" >Apellido:<p class="enLinea">${alumnos[index].nombre}</p></p>
       <p class="enLinea" >Nacionalidad:<p class="enLinea">${alumnos[index].nombre}</p></p>
       <p class="enLinea" >Telefono:<p class="enLinea">${alumnos[index].nombre}</p></p>
-      <p class="enLinea" >Email:<p class="enLinea">${alumnos[index].nombre}</p></p>`
-     // alert("El Dni Nro: " + alumnos[index].dni + " Esta registrado al Alumno: " + alumnos[index].nombre)
+      <p class="enLinea" >Email:<p class="enLinea">${alumnos[index].nombre}</p></p>`;
+        // alert("El Dni Nro: " + alumnos[index].dni + " Esta registrado al Alumno: " + alumnos[index].nombre)
       }
     }
   } else {
-    let resultadoBusqueda = document.getElementById("contenedorBusqueda")
-      resultadoBusqueda.innerHTML = `<p>El Dni consultado , no se encuentra registrado.</p>`
-    
+    let resultadoBusqueda = document.getElementById("contenedorBusqueda");
+    resultadoBusqueda.innerHTML = `<p>El Dni consultado , no se encuentra registrado.</p>`;
   }
-}
+};
 
+// alumnos.push(new Alumno(document.getElementById("nombre").value, document.getElementById("dni").value))
+// alumnoNuevo.reset()
+// verMensaje()
+// const alumnosJson =JSON.stringify(alumnos)
+// localStorage.setItem("alumnos", alumnosJson)
 
-  
-  // alumnos.push(new Alumno(document.getElementById("nombre").value, document.getElementById("dni").value))
-  // alumnoNuevo.reset()
-  // verMensaje()
-  // const alumnosJson =JSON.stringify(alumnos)
-  // localStorage.setItem("alumnos", alumnosJson)
-  
-  // console.log(alumnos)
-  
+// console.log(alumnos)
 
 function verMensajeBusqueda() {
-  let guardarAlumno = document.getElementById("guardarAlumno")
-  mensaje.classList.add("d-block")
-  
+  let guardarAlumno = document.getElementById("guardarAlumno");
+  mensaje.classList.add("d-block");
 }
 
 function limpiarBusqueda() {
-  mensaje.classList.remove("d-block")
+  mensaje.classList.remove("d-block");
 }
-
 
 //
 /*--------------------------------------------------------------
 # fin buscar alumno 
 --------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+# Listado de alumnos 
+--------------------------------------------------------------*/
 
+let listadoAlumnos = JSON.parse(localStorage.getItem("alumnos"));
+console.log(listadoAlumnos);
+
+// console.log(listadoAlumnos[index].nombre)
+const mostrarlistadoAlumnos = () => {
+  for (let index = 0; index < listadoAlumnos.length; index++) {
+    let resultadoListado = document.getElementById("contenedorListado");
+    resultadoListado.innerHTML += `<p class="enLinea" >Dni:<p class="enLinea">${listadoAlumnos[index].dni}<p class="enLinea" >Nombre:<p class="enLinea">${listadoAlumnos[index].nombre}</p></p></p></p>`;
+  }
+};
+
+let listAlum = document.getElementById("botonListado");
+listAlum.onclick = mostrarlistadoAlumnos;
+
+/*--------------------------------------------------------------
+# fin listado de alumnos 
+--------------------------------------------------------------*/
 // const CargarNotas = (dni) => {
-
 
 //   for (let index = 0; index < alumnos.length; index++) {
 //     if (document.getElementById("ingDni").value === dni) {
-      
+
 //       var select = document.getElementById("matEle")
 
 //       select.addEventListener("change", function() {
@@ -363,13 +368,13 @@ function limpiarBusqueda() {
 //         console.log(this.options[select.selectedIndex])
 //         // console.log(alumnos[index].dni)
 //         // let materiaElegida = document.getElementsByClassName("matEle")
-//         alumnos[index].Materia[selectedOpcion].nota1 = document.getElementById("nota1").value 
-//         alumnos[index].Materia[selectedOpcion].nota2 = document.getElementById("nota2").value  
-//         alumnos[index].Materia[selectedOpcion].nota3 = document.getElementById("nota3").value  
+//         alumnos[index].Materia[selectedOpcion].nota1 = document.getElementById("nota1").value
+//         alumnos[index].Materia[selectedOpcion].nota2 = document.getElementById("nota2").value
+//         alumnos[index].Materia[selectedOpcion].nota3 = document.getElementById("nota3").value
 //         console.log(alumnos[index].dni)
-        
+
 //       })
-        
+
 //       }
 //     }
 //   }
@@ -380,17 +385,14 @@ function limpiarBusqueda() {
 //  function a() {
 //   alert(dni)
 //  }
-//  
- 
+//
+
 //  function a() {
 //   console.log(dni)
 //  }
-//  alumnos[index].materias[i].nota1 
+//  alumnos[index].materias[i].nota1
 // let eee = document.getElementById("matEle").value
 // console.log(eee = onchange)
-
-
-
 
 // const CargarNotas = (ingDni[value]) => {
 //   for (let index = 0; index < alumnos.length; index++){
@@ -398,22 +400,15 @@ function limpiarBusqueda() {
 //     alert("caca")
 //   }
 //   }}
-  // for (let index = 0; index < alumnos.length; index++) {
-  //    if (alumnos[index].dni === dnidni )
-       
-        // alert("hola")
-          // _materias.push(new selected.nota1(nota1)) 
-        
-          // subirNotas = document.getElementById("cargarNotas")
-          // subirNotas.onclick = CargarNotas
-          
+// for (let index = 0; index < alumnos.length; index++) {
+//    if (alumnos[index].dni === dnidni )
 
+// alert("hola")
+// _materias.push(new selected.nota1(nota1))
 
-       
-        
-        
-          
+// subirNotas = document.getElementById("cargarNotas")
+// subirNotas.onclick = CargarNotas
+
 //   }
 
 //   console.log(dnidni)
-
