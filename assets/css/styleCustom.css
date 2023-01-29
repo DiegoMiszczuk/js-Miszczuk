@@ -86,7 +86,7 @@
   border-radius: 5px;
   width: 350px;
   height: 210px;
-  background-color: w;
+ 
 }
 
 .enLinea {
@@ -103,7 +103,18 @@
 #contenedorListado {
   border: 1px solid rgb(199, 227, 236);
   border-radius: 5px;
-  width: 350px;
+  width: 370px;
   height: 210px;
-  background-color: w;
+ 
+}
+
+/*--------------------------------------------------------------
+# Promedios
+--------------------------------------------------------------*/
+#contenedorPromedio {
+  border: 1px solid rgb(199, 227, 236);
+  border-radius: 5px;
+  width: 350px;
+  height: 110px;
+ 
 }

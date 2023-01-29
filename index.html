@@ -47,15 +47,11 @@
     <div class="container d-flex align-items-center justify-content-lg-between">
 
       <h1 class="logo me-auto me-lg-0"><a href="index.html">E.Note<span>.</span></a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+      
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#about">Acerca de</a></li> -->
-          <!-- <li><a class="nav-link scrollto" href="#services">Servicios</a></li> -->
-          <!-- <li><a class="nav-link scrollto " href="#portfolio">Servicios</a></li> -->
+          
           <li><a class="nav-link scrollto" href="#testimonials">Nosotros</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
 
@@ -78,7 +74,7 @@
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-6 col-lg-8">
           <h1>Sistema de gestion de calificaciones<span>.</span></h1>
-          <!-- <h2>We are team of talented digital marketers</h2> -->
+         
         </div>
       </div>
 
@@ -98,19 +94,19 @@
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-calendar-todo-line"></i>
-            <h3><a href="">Ver Promedios</a></h3>
+            <h3><a href="#promedios">Ver Promedios</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-paint-brush-line"></i>
-            <h3><a href="">Buscar Alumno</a></h3>
+            <h3><a href="#buscar">Buscar Alumno</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-database-2-line"></i>
-            <h3><a href="">Listado de Alumnos</a></h3>
+            <h3><a href="#listado">Listado de Alumnos</a></h3>
           </div>
         </div>
       </div>
@@ -143,10 +139,10 @@
                     <div class="row">
                       <div class="col-md-6 form-group">
                         <input type="text" name="name" class="form-control" id="nombre" placeholder="Nombre" required
-                          onclick="limpiar()">
+                          >
                       </div>
                       <div class="col-md-6 form-group mt-3 mt-md-0">
-                        <input type="text" class="form-control" name="apellido" id="Apellido" placeholder="Apellido"
+                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido"
                           onclick="limpiar()">
                       </div>
                     </div>
@@ -155,19 +151,19 @@
                         onclick="limpiar()">
                     </div>
                     <div class="form-group mt-3">
-                      <input type="text" class="form-control" name="subject" id="Email" placeholder="Nacionalidad"
+                      <input type="text" class="form-control" name="subject" id="nacionalidad" placeholder="Nacionalidad"
                         onclick="limpiar()">
                     </div>
                     <div class="form-group mt-3">
-                      <input type="text" class="form-control" name="subject" id="Email" placeholder="Dirección"
+                      <input type="text" class="form-control" name="subject" id="direccion" placeholder="Dirección"
                         onclick="limpiar()">
                     </div>
                     <div class="form-group mt-3">
-                      <input type="text" class="form-control" name="subject" id="Email" placeholder="Telefono"
+                      <input type="text" class="form-control" name="subject" id="telefono" placeholder="Telefono"
                         onclick="limpiar()">
                     </div>
                     <div class="form-group mt-3">
-                      <input type="text" class="form-control" name="subject" id="Email" placeholder="Email"
+                      <input type="email" class="form-control" name="Email" id="Email" placeholder="Email"
                         onclick="limpiar()">
                     </div>
 
@@ -272,7 +268,7 @@
 
 
     <!-- ======= Buscar alumno ======= -->
-    <section id="about" class="about">
+    <section id="buscar" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -339,7 +335,7 @@
 
 
     <!-- ======= Promedios Section ======= -->
-    <section id="features" class="features">
+    <section id="promedios" class="features">
       <div class="container" data-aos="fade-up">
 
         <div id="calificar" class="row">
@@ -349,36 +345,47 @@
             <div class="section-title margenIzq margenTop">
               <h2>Ver Promedios</h2>
 
+
             </div>
-            <!-- <h3>Ingrese Dni del Alumno</h3> -->
-            <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
-
-            <input id="dniPromedio" class="form-control margenIzq margenBttm entradaNotas" type="text"
-              placeholder="Ingrese Dni">
-
-            <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-book icono"></i></div>
-
-            <select id="matElePromedio" class="form-control form-select form-select-sm entradaNotas"
-              aria-label="Default select example">
-
+            <form action="">
+              <!-- <h3>Ingrese Dni del Alumno</h3> -->
               <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
 
-              <option class="form-control" value="" disabled selected>Seleccione Materia</option>
+              <input id="dniPromedio" class="form-control margenIzq margenBttm entradaNotas" type="text"
+                placeholder="Ingrese Dni">
 
-              <option id="matematica" class="form-control" value="0">Matematicas</option>
+              <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-book icono"></i></div>
 
-              <option id="historia" class="form-control" value="1">Historia</option>
+              <select id="matElePromedio" class="form-control form-select form-select-sm entradaNotas"
+                aria-label="Default select example">
 
-              <option id="lengua" class="form-control" value="2">Lengua</option>
-            </select>
-            <div class="icon-box mt-5 mt-lg- container" data-aos="zoom-in" data-aos-delay="150"></div>
+                <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
+
+                <option class="form-control" value="" disabled selected>Seleccione Materia</option>
+
+                <option id="matematica" class="form-control" value="0">Matematicas</option>
+
+                <option id="historia" class="form-control" value="1">Historia</option>
+
+                <option id="lengua" class="form-control" value="2">Lengua</option>
+              </select>
+              <div class="icon-box mt-5 mt-lg- container" data-aos="zoom-in" data-aos-delay="150"></div>
 
 
 
 
-            <div id="" class="text-center "><button id="botonPromedio" class="btnPromedio Contact button" type="button"
-                onclick="verNotasPromedio(dni)">Ver promedio</button></div>
+              <div id="" class="text-center "><button id="botonPromedio" class="btnPromedio Contact button"
+                  type="button" onclick="verNotasPromedio(dni)">Ver promedio</button></div>
+                  <div id="contenedorPromedio" class="form-group mt-3">
+
+                  </div>
+                </div>
+                
+          
           </div>
+          </form>
+
+
         </div>
     </section><!-- End Promedios Section -->
 
@@ -397,7 +404,7 @@
 
 
     <!-- ======= Listado de  alumnos ======= -->
-    <section id="about" class="about">
+    <section id="listado" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -437,7 +444,7 @@
 
                       </div>
                       <div class="text-center ">
-                        <button id="botonListado" class="button" type="button">Ver listado de Alumnos</button>
+                        <button id="botonListado" class="button" type="button" onclick=limpiar()>Ver listado de Alumnos</button>
                       </div>
                   </form>
 
