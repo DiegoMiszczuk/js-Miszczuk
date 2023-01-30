@@ -252,16 +252,21 @@
     <!-- ======= inicio de sesión  Section ======= -->
     <section id="cta" class="cta">
       <div class="container" data-aos="zoom-in">
-
+      <form id="datosUsuario" action="" method="" role="" class=""  >
         <div class="text-center">
           <!-- <h3>Iniciar Sesión</h3> -->
-          <input class="datosSesion cta-btn" type="text" label="Usuario" placeholder="Usuario" la>
-          <input class="datosSesion cta-btn" type="text" placeholder="Contraseña">
+          <input id="usuario" class="datosSesion cta-btn" type="text" label="Usuario" placeholder="Usuario" onclick="limpiarRegistro()" >
+          <input id="contraseña" class="datosSesion cta-btn" type="text" placeholder="Contraseña" onclick="limpiarRegistro()">
           <p> ingresa tus datos de acceso o creá tu cuenta</p>
-          <a class="cta-btn datosSesion" href="#">Iniciar sesión</a>
-          <a class="cta-btn datosSesion" href="#">Registrarse</a>
+          <button id="iniciarSesion" class="cta-btn datosSesion" >Iniciar sesión</button>
+          <button id="registrarse" class="cta-btn datosSesion">Registrarse</button>
         </div>
-
+        <div class="my-3">
+          <!-- <div class="loading">Cargando</div> -->
+          <!-- <div class="error-message"></div> -->
+          <div id="mensaje2" class="sent-message2">Registro exitoso. Gracias!</div>
+        </div>
+      </form>
       </div>
     </section><!-- End inicio de sesión Section -->
 

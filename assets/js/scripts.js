@@ -81,13 +81,7 @@ const cargarNotas = () => {
       alumnos[index].materias[materiaElegida].nota1 = notaInst1;
       alumnos[index].materias[materiaElegida].nota2 = notaInst2;
       alumnos[index].materias[materiaElegida].nota3 = notaInst3;
-      console.dir(calificacion1);
-      console.log(notaInst2);
-      console.log(notaInst3);
-      alert(notaInst1 + notaInst2 + notaInst3);
-      console.log(alumnos);
-      // let reset = document.getElementById("calificar");
-      // calificar.reset();
+      
     }
   }
 };
@@ -102,8 +96,6 @@ const cargarNotas = () => {
 const verNotasPromedio = () => {
   let opcionMateriaPromedio = document.getElementById("matElePromedio");
   materiaElegidaPromedio = opcionMateriaPromedio.value;
-  console.dir(materiaElegidaPromedio);
-
   let dniIngresadoPromedio = document.getElementById("dniPromedio");
   let dni = dniIngresadoPromedio.value;
   for (let index = 0; index < alumnos.length; index++) {
@@ -150,7 +142,6 @@ function nuevoAlumno() {
   const alumnosJson = JSON.stringify(alumnos);
   localStorage.setItem("alumnos", alumnosJson);
 
-  console.log(alumnos);
 }
 
 function verMensaje() {
@@ -210,7 +201,7 @@ function limpiarBusqueda() {
 --------------------------------------------------------------*/
 
 let listadoAlumnos = JSON.parse(localStorage.getItem("alumnos"));
-console.log(listadoAlumnos);
+
 
 const mostrarlistadoAlumnos = () => {
   for (let index = 0; index < listadoAlumnos.length; index++) {
@@ -225,3 +216,77 @@ listAlum.onclick = mostrarlistadoAlumnos;
 /*--------------------------------------------------------------
 # fin listado de alumnos 
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+#  Registro Usuario
+--------------------------------------------------------------*/
+
+// let usuario = document.getElementById("usuario")
+// let contraseña = document.getElementById("contraseña")
+
+// let usuarios = []
+
+
+
+// class Usuario {
+//   constructor(usuario,contraseña) {
+//     this.usuario = usuario;
+//     this.contraseña = contraseña;
+    
+//   }
+// }
+
+
+
+// function nuevoUsuario() {
+//   usuarios.push(
+//     new Usuario(
+//       document.getElementById("usuario").value,
+//       document.getElementById("contraseña").value,
+    
+
+
+//       ))
+//       const usuariosJson = JSON.stringify(usuarios);
+//       localStorage.setItem("usuarios", usuariosJson);
+//       verMensajeRegistro()
+//       datosUsuario.reset()
+     
+      
+//     }
+  
+//    console.log(usuarios)
+
+// let ingreso = document.getElementById("registrarse")
+// ingreso.onclick = nuevoUsuario
+
+// function verMensajeRegistro() {
+//   let guardarAlumno = document.getElementById("guardarAlumno");
+//   mensaje2.classList.add("d-block");
+// }
+
+// function limpiarRegistro() {
+//   mensaje2.classList.remove("d-block");
+// }
+/*--------------------------------------------------------------
+#  Fin Registro Usuario
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+#  Inicio Sesión
+--------------------------------------------------------------*/
+
+// let registrados = JSON.parse(localStorage.getItem("usuarios"));
+
+// function ingreso(usuario,contraseña) {
+//   for (let index = 0; index < registrados.length; index++) {
+//     if (registrados[index].usuario === usuario && registrados[index].contraseña === contraseña) {
+//       alert("hola")
+//     } else {
+//       alert("chau")
+//     }
+    
+//   }
+// }
+
+// let inicioSesion = document.getElementById("iniciarSesion")
+// inicioSesion.onclick = ingreso

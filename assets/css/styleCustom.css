@@ -118,3 +118,17 @@
   height: 110px;
  
 }
+/*--------------------------------------------------------------
+# Inicio sesion
+--------------------------------------------------------------*/
+
+.sent-message2 {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+
+ align-content: center;
+}
