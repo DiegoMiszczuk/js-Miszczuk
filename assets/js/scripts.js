@@ -83,8 +83,18 @@ const cargarNotas = () => {
       alumnos[index].materias[materiaElegida].nota3 = notaInst3;
       
     }
+    materiaCalificada()
   }
 };
+function materiaCalificada() {
+  Swal.fire({
+  
+    icon: 'success',
+    title:  "Materia Calificada con exito!!",
+    showConfirmButton: false,
+    timer: 2000
+   } )
+}
 
 /*--------------------------------------------------------------
 # Fin calificar alumno
@@ -100,6 +110,7 @@ const verNotasPromedio = () => {
   let dni = dniIngresadoPromedio.value;
   for (let index = 0; index < alumnos.length; index++) {
     if (dni === alumnos[index].dni) {
+      tostadaPromedio()
       let resultadoPromedio = document.getElementById("contenedorPromedio");
       resultadoPromedio.innerHTML = `<p class="enLinea" >Nombre:<p class="enLinea">${
         alumnos[index].nombre
@@ -121,7 +132,18 @@ const verNotasPromedio = () => {
     }
   }
 };
+function tostadaPromedio() {
+  Toastify({
 
+    text: "Promedio Creado!",
+    position: "left",
+    duration: 3000,
+    gravity: "bottom",
+    style: {
+      background: " #ffc451",
+    } 
+    }).showToast();
+}
 /*--------------------------------------------------------------
 # Nuevo Alumno
 --------------------------------------------------------------*/
@@ -168,6 +190,7 @@ const busquedaDni = () => {
   if (alumnos.find((el) => el.dni === dniBuscado)) {
     for (let index = 0; index < alumnos.length; index++) {
       if (dniBuscado === alumnos[index].dni) {
+        alumnoEncontrado()
         let resultadoBusqueda = document.getElementById("contenedorBusqueda");
         resultadoBusqueda.innerHTML = `<p class="enLinea" >Nombre:<p class="enLinea">${alumnos[index].nombre}</p></p>
       <p class="enLinea" >Apellido:<p class="enLinea">${alumnos[index].apellido}</p></p>
@@ -181,6 +204,16 @@ const busquedaDni = () => {
     resultadoBusqueda.innerHTML = `<p>El Dni consultado , no se encuentra registrado.</p>`;
   }
 };
+
+function alumnoEncontrado() {
+  Swal.fire({
+  
+    icon: 'success',
+    title: 'Alumno Encontrado!',
+    showConfirmButton: false,
+    timer: 2000
+   } )
+}
 
 function verMensajeBusqueda() {
   let guardarAlumno = document.getElementById("guardarAlumno");
@@ -207,6 +240,17 @@ const mostrarlistadoAlumnos = () => {
   for (let index = 0; index < listadoAlumnos.length; index++) {
     let resultadoListado = document.getElementById("contenedorListado");
     resultadoListado.innerHTML += `<p class="enLinea" >Dni:<p class="enLinea">${listadoAlumnos[index].dni}<p class="enLinea" >Nombre:<p class="enLinea">${listadoAlumnos[index].nombre}<p class="enLinea" >Apellido:<p class="enLinea">${listadoAlumnos[index].apellido}</p></p></p></p></p>`;
+   
+    Toastify({
+
+      text: "Listado creado!",
+      position: "left",
+      duration: 3000,
+      gravity: "bottom",
+      style: {
+        background: " #ffc451",
+      } 
+      }).showToast();
   }
 };
 
