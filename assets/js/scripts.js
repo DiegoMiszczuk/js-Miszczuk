@@ -81,19 +81,17 @@ const cargarNotas = () => {
       alumnos[index].materias[materiaElegida].nota1 = notaInst1;
       alumnos[index].materias[materiaElegida].nota2 = notaInst2;
       alumnos[index].materias[materiaElegida].nota3 = notaInst3;
-      
     }
-    materiaCalificada()
+    materiaCalificada();
   }
 };
 function materiaCalificada() {
   Swal.fire({
-  
-    icon: 'success',
-    title:  "Materia Calificada con exito!!",
+    icon: "success",
+    title: "Materia Calificada con exito!!",
     showConfirmButton: false,
-    timer: 2000
-   } )
+    timer: 2000,
+  });
 }
 
 /*--------------------------------------------------------------
@@ -110,7 +108,7 @@ const verNotasPromedio = () => {
   let dni = dniIngresadoPromedio.value;
   for (let index = 0; index < alumnos.length; index++) {
     if (dni === alumnos[index].dni) {
-      tostadaPromedio()
+      tostadaPromedio();
       let resultadoPromedio = document.getElementById("contenedorPromedio");
       resultadoPromedio.innerHTML = `<p class="enLinea" >Nombre:<p class="enLinea">${
         alumnos[index].nombre
@@ -134,15 +132,14 @@ const verNotasPromedio = () => {
 };
 function tostadaPromedio() {
   Toastify({
-
     text: "Promedio Creado!",
     position: "left",
     duration: 3000,
     gravity: "bottom",
     style: {
       background: " #ffc451",
-    } 
-    }).showToast();
+    },
+  }).showToast();
 }
 /*--------------------------------------------------------------
 # Nuevo Alumno
@@ -163,7 +160,6 @@ function nuevoAlumno() {
   verMensaje();
   const alumnosJson = JSON.stringify(alumnos);
   localStorage.setItem("alumnos", alumnosJson);
-
 }
 
 function verMensaje() {
@@ -190,7 +186,7 @@ const busquedaDni = () => {
   if (alumnos.find((el) => el.dni === dniBuscado)) {
     for (let index = 0; index < alumnos.length; index++) {
       if (dniBuscado === alumnos[index].dni) {
-        alumnoEncontrado()
+        alumnoEncontrado();
         let resultadoBusqueda = document.getElementById("contenedorBusqueda");
         resultadoBusqueda.innerHTML = `<p class="enLinea" >Nombre:<p class="enLinea">${alumnos[index].nombre}</p></p>
       <p class="enLinea" >Apellido:<p class="enLinea">${alumnos[index].apellido}</p></p>
@@ -202,17 +198,25 @@ const busquedaDni = () => {
   } else {
     let resultadoBusqueda = document.getElementById("contenedorBusqueda");
     resultadoBusqueda.innerHTML = `<p>El Dni consultado , no se encuentra registrado.</p>`;
+    alumnoNoEncontrado()
   }
 };
 
 function alumnoEncontrado() {
   Swal.fire({
-  
-    icon: 'success',
-    title: 'Alumno Encontrado!',
+    icon: "success",
+    title: "Alumno Encontrado!",
     showConfirmButton: false,
-    timer: 2000
-   } )
+    timer: 2000,
+  });
+}
+function alumnoNoEncontrado() {
+  Swal.fire({
+    icon: "error",
+    title: "Alumno no Encontrado!",
+    showConfirmButton: false,
+    timer: 2000,
+  });
 }
 
 function verMensajeBusqueda() {
@@ -235,23 +239,20 @@ function limpiarBusqueda() {
 
 let listadoAlumnos = JSON.parse(localStorage.getItem("alumnos"));
 
-
 const mostrarlistadoAlumnos = () => {
   for (let index = 0; index < listadoAlumnos.length; index++) {
     let resultadoListado = document.getElementById("contenedorListado");
     resultadoListado.innerHTML += `<p class="enLinea" >Dni:<p class="enLinea">${listadoAlumnos[index].dni}<p class="enLinea" >Nombre:<p class="enLinea">${listadoAlumnos[index].nombre}<p class="enLinea" >Apellido:<p class="enLinea">${listadoAlumnos[index].apellido}</p></p></p></p></p>`;
-   
-    Toastify({
-
-      text: "Listado creado!",
-      position: "left",
-      duration: 3000,
-      gravity: "bottom",
-      style: {
-        background: " #ffc451",
-      } 
-      }).showToast();
   }
+  Toastify({
+    text: "Listado creado!",
+    position: "left",
+    duration: 3000,
+    gravity: "bottom",
+    style: {
+      background: " #ffc451",
+    },
+  }).showToast();
 };
 
 let listAlum = document.getElementById("botonListado");
@@ -270,35 +271,28 @@ listAlum.onclick = mostrarlistadoAlumnos;
 
 // let usuarios = []
 
-
-
 // class Usuario {
 //   constructor(usuario,contraseña) {
 //     this.usuario = usuario;
 //     this.contraseña = contraseña;
-    
+
 //   }
 // }
-
-
 
 // function nuevoUsuario() {
 //   usuarios.push(
 //     new Usuario(
 //       document.getElementById("usuario").value,
 //       document.getElementById("contraseña").value,
-    
-
 
 //       ))
 //       const usuariosJson = JSON.stringify(usuarios);
 //       localStorage.setItem("usuarios", usuariosJson);
 //       verMensajeRegistro()
 //       datosUsuario.reset()
-     
-      
+
 //     }
-  
+
 //    console.log(usuarios)
 
 // let ingreso = document.getElementById("registrarse")
@@ -328,7 +322,7 @@ listAlum.onclick = mostrarlistadoAlumnos;
 //     } else {
 //       alert("chau")
 //     }
-    
+
 //   }
 // }
 

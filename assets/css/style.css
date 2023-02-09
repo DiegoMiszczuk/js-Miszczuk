@@ -309,6 +309,9 @@ h6 {
   .navbar .dropdown .dropdown ul {
     left: -90%;
   }
+  /* .tituloPrincipal{
+  margin-top: 150px;
+} */
 
   .navbar .dropdown .dropdown:hover > ul {
     left: -100%;
@@ -458,6 +461,7 @@ h6 {
   line-height: 64px;
   color: #fff;
   font-family: "Poppins", sans-serif;
+  margin-top: 100px;
 }
 
 #hero h1 span {

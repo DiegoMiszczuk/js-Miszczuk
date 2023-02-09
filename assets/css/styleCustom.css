@@ -20,6 +20,9 @@
 .section-title {
   padding-bottom: 40px;
 }
+/* .tituloPrincipal{
+  margin-top: 150px;
+} */
 
 /*--------------------------------------------------------------
 # Nuevo alumno
@@ -37,14 +40,14 @@
   margin-top: 30px;
   text-align: center;
 }
-.entradaNotas {
+/* .entradaNotas {
   width: 150px;
   margin-left: 20px;
   margin-top: 20px;
   align-items: center;
-}
+} */
 .icono {
-  margin-left: 20px;
+  /* margin-left: 20px; */
   margin-right: 20px;
 }
 .btnCargarNotas {
@@ -58,8 +61,11 @@
   align-items: center;
 }
 
-.margenIzq {
+/* .margenIzq {
   margin-left: 30px;
+} */
+#nota1{
+  justify-content: center;
 }
 .margenBttm {
   margin-bottom: 20px;
@@ -92,7 +98,7 @@
 #contenedorBusqueda {
   border: 1px solid rgb(199, 227, 236);
   border-radius: 5px;
-  width: 350px;
+  /* width: 350px; */
   height: 210px;
  
 }
@@ -111,7 +117,7 @@
 #contenedorListado {
   border: 1px solid rgb(199, 227, 236);
   border-radius: 5px;
-  width: 370px;
+  /* width: 370px; */
   height: 210px;
  
 }
@@ -122,9 +128,16 @@
 #contenedorPromedio {
   border: 1px solid rgb(199, 227, 236);
   border-radius: 5px;
-  width: 350px;
+  /* width: 350px; */
   height: 110px;
+  
  
+}
+#matElePromedio{
+  margin-top:40px ;
+  height: 40px;
+  /* width: 300px; */
+  border-radius: 5px;
 }
 /*--------------------------------------------------------------
 # Inicio sesion
