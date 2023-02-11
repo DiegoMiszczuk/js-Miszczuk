@@ -3,15 +3,16 @@ console.log(alumnos)
 /*--------------------------------------------------------------
 # consulta a Local storage
 --------------------------------------------------------------*/
-//  let alumnosLs = JSON.stringify(localStorage.getItem("alumnos"))
+ let alumnosLs = JSON.parse(localStorage.getItem("alumnos"))
 
-// if (alumnosLs){
-//   alumnos = alumnosLs
-// }
+if (alumnosLs){
+  alumnos = alumnosLs
+}
+console.log(alumnos)
 /*--------------------------------------------------------------
 # consulta a Local storage
 --------------------------------------------------------------*/
-const creaAlumno = (nombre, dni) => {
+const creaAlumno = (nombre, apellido, dni, nacionalidad, direccion, telefono, email) => {
   return alumnos.push(
     new Alumno(nombre, apellido, dni, nacionalidad, direccion, telefono, email)
   );
@@ -263,53 +264,90 @@ function mostrarToastify(texto,posicion,tiempo,altura,) {
 #  Registro Usuario
 --------------------------------------------------------------*/
 
-// let usuario = document.getElementById("usuario")
-// let contraseña = document.getElementById("contraseña")
+let usuario = document.getElementById("usuario")
+let contraseña = document.getElementById("contraseña")
 
-// let usuarios = []
+let usuarios = []
+let usuariosLs = JSON.parse(localStorage.getItem("usuarios"))
 
-// class Usuario {
-//   constructor(usuario,contraseña) {
-//     this.usuario = usuario;
-//     this.contraseña = contraseña;
+if (usuariosLs){
+  usuarios = usuariosLs
+}
+console.log(usuarios)
+class Usuario {
+  constructor(usuario,contraseña) {
+    this.usuario = usuario;
+    this.contraseña = contraseña;
 
-//   }
-// }
+  }
+}
 
-// function nuevoUsuario() {
-//   usuarios.push(
-//     new Usuario(
-//       document.getElementById("usuario").value,
-//       document.getElementById("contraseña").value,
+function nuevoUsuario() {
+  usuarios.push(
+    new Usuario(
+      document.getElementById("usuario").value,
+      document.getElementById("contraseña").value,
 
-//       ))
-//       const usuariosJson = JSON.stringify(usuarios);
-//       localStorage.setItem("usuarios", usuariosJson);
-//       verMensajeRegistro()
-//       datosUsuario.reset()
+      ))
+      const usuariosJson = JSON.stringify(usuarios);
+      localStorage.setItem("usuarios", usuariosJson);
+      MostrarSweetAlert("Registro exitoso!!!","success", false, 2000)
+      datosUsuario.reset()
 
-//     }
+    }
 
-//    console.log(usuarios)
+   console.log(usuarios)
 
-// let ingreso = document.getElementById("registrarse")
-// ingreso.onclick = nuevoUsuario
+let ingreso = document.getElementById("registrarse")
+ingreso.onclick = nuevoUsuario
 
-// function verMensajeRegistro() {
-//   let guardarAlumno = document.getElementById("guardarAlumno");
-//   mensaje2.classList.add("d-block");
-// }
+function verMensajeRegistro() {
+  // let guardarAlumno = document.getElementById("guardarAlumno");
+  mensaje2.classList.add("d-block");
+}
 
-// function limpiarRegistro() {
-//   mensaje2.classList.remove("d-block");
-// }
+function limpiarRegistro() {
+  mensaje2.classList.remove("d-block");
+}
 /*--------------------------------------------------------------
 #  Fin Registro Usuario
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 #  Inicio Sesión
 --------------------------------------------------------------*/
+// let nombreIngreso = document.getElementById("usuario")
+// let pass = document.getElementById("pass")
+// let usuaLs = (localStorage.getItem("usuarios"))
+// console.log(usuaLs)
+fetch (localStorage.getItem("usuarios"))
+  .then((resp)=> resp.json)
+  .then((data)=> console.log(data))
+  // .then((data)=> {
+  //   for (let index = 0; index < data.length; index++) {
+  //     if (nombreIngreso === data[index].usuario && pass === data[index].contraseña) {
+  //       alert("hola")
+  //     }
+      
+  //   }
+  // })
+// let formulario = document.getElementById("datosUsuario")
+// formulario.addEventListener("submit", function(e) {
+//   e.preventDefault();
+//   console.log("click")
+//   let datos = new FormData(formulario);
+//   console.log(datos)
+//   console.log(datos.get("usuario"))
+//   console.log(datos.get("pass"))
 
+//   fetch("../asset/js/login.php",{
+//     method: "POST",
+//     body: datos
+//   })
+//     .then(res => res.json)
+//     .then(data=>{
+//       console.log(data)
+//     })
+// })
 // let registrados = JSON.parse(localStorage.getItem("usuarios"));
 
 // function ingreso(usuario,contraseña) {
@@ -325,3 +363,40 @@ function mostrarToastify(texto,posicion,tiempo,altura,) {
 
 // let inicioSesion = document.getElementById("iniciarSesion")
 // inicioSesion.onclick = ingreso
+/*--------------------------------------------------------------
+#  fetch
+--------------------------------------------------------------*/
+
+
+// fetch("../assets/js/alumnos.json", {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             title: 'Coderhouse',
+//             body: 'Post de prueba',
+//             userId: 1,
+//         }),
+//         headers: {
+//             'Content-type': 'application/json; charset=UTF-8',
+//         },
+//       })
+//       .then((response)=> response.json)
+//       .then((data)=> console.log(data))
+//       .catch((error)=> console.log(error))
+
+      // let url = "../assets/js/alumnos.json";
+      // let data = localStorage.getItem("usuarios")
+      
+      // fetch(url, {
+      //   method: 'POST', // or 'PUT'
+      //   body: (data), // data can be `string` or {object}!
+      //   headers:{
+      //     'Content-Type': 'application/json'
+      //   }
+      // }).then(res => res.json())
+      // .catch(error => console.log(error))
+      // .then(response => console.log(response));
+
+
+// fetch("../assets/js/alumnos.json")
+//   .then(response => response.json())
+//   .then(data => console.log(data));
