@@ -82,17 +82,17 @@ const cargarNotas = () => {
       alumnos[index].materias[materiaElegida].nota2 = notaInst2;
       alumnos[index].materias[materiaElegida].nota3 = notaInst3;
     }
-    materiaCalificada();
+    mostrarSweetAlert("Materia calificada con exito", "success", false,2000);
   }
 };
-function materiaCalificada() {
-  Swal.fire({
-    icon: "success",
-    title: "Materia Calificada con exito!!",
-    showConfirmButton: false,
-    timer: 2000,
-  });
-}
+// function materiaCalificada() {
+//   Swal.fire({
+//     icon: "success",
+//     title: "Materia Calificada con exito!!",
+//     showConfirmButton: false,
+//     timer: 2000,
+//   });
+// }
 
 /*--------------------------------------------------------------
 # Fin calificar alumno
@@ -108,7 +108,7 @@ const verNotasPromedio = () => {
   let dni = dniIngresadoPromedio.value;
   for (let index = 0; index < alumnos.length; index++) {
     if (dni === alumnos[index].dni) {
-      tostadaPromedio();
+      mostrarToastify("promedio creado","left",2000,"bottom");
       let resultadoPromedio = document.getElementById("contenedorPromedio");
       resultadoPromedio.innerHTML = `<p class="enLinea" >Nombre:<p class="enLinea">${
         alumnos[index].nombre
@@ -130,17 +130,17 @@ const verNotasPromedio = () => {
     }
   }
 };
-function tostadaPromedio() {
-  Toastify({
-    text: "Promedio Creado!",
-    position: "left",
-    duration: 3000,
-    gravity: "bottom",
-    style: {
-      background: " #ffc451",
-    },
-  }).showToast();
-}
+// function tostadaPromedio() {
+//   Toastify({
+//     text: "Promedio Creado!",
+//     position: "left",
+//     duration: 3000,
+//     gravity: "bottom",
+//     style: {
+//       background: " #ffc451",
+//     },
+//   }).showToast();
+// }
 /*--------------------------------------------------------------
 # Nuevo Alumno
 --------------------------------------------------------------*/
@@ -186,7 +186,7 @@ const busquedaDni = () => {
   if (alumnos.find((el) => el.dni === dniBuscado)) {
     for (let index = 0; index < alumnos.length; index++) {
       if (dniBuscado === alumnos[index].dni) {
-        alumnoEncontrado();
+        mostrarSweetAlert("Alumno encontrado", "success", false, 2000);
         let resultadoBusqueda = document.getElementById("contenedorBusqueda");
         resultadoBusqueda.innerHTML = `<p class="enLinea" >Nombre:<p class="enLinea">${alumnos[index].nombre}</p></p>
       <p class="enLinea" >Apellido:<p class="enLinea">${alumnos[index].apellido}</p></p>
@@ -198,26 +198,26 @@ const busquedaDni = () => {
   } else {
     let resultadoBusqueda = document.getElementById("contenedorBusqueda");
     resultadoBusqueda.innerHTML = `<p>El Dni consultado , no se encuentra registrado.</p>`;
-    alumnoNoEncontrado()
+    mostrarSweetAlert("alumno no encontrado", "warning", false, 2000)
   }
 };
 
-function alumnoEncontrado() {
-  Swal.fire({
-    icon: "success",
-    title: "Alumno Encontrado!",
-    showConfirmButton: false,
-    timer: 2000,
-  });
-}
-function alumnoNoEncontrado() {
-  Swal.fire({
-    icon: "error",
-    title: "Alumno no Encontrado!",
-    showConfirmButton: false,
-    timer: 2000,
-  });
-}
+// function alumnoEncontrado() {
+//   Swal.fire({
+//     icon: "success",
+//     title: "Alumno Encontrado!",
+//     showConfirmButton: false,
+//     timer: 2000,
+//   });
+// }
+// function alumnoNoEncontrado() {
+//   Swal.fire({
+//     icon: "error",
+//     title: "Alumno no Encontrado!",
+//     showConfirmButton: false,
+//     timer: 2000,
+//   });
+// }
 
 function verMensajeBusqueda() {
   let guardarAlumno = document.getElementById("guardarAlumno");
@@ -244,15 +244,16 @@ const mostrarlistadoAlumnos = () => {
     let resultadoListado = document.getElementById("contenedorListado");
     resultadoListado.innerHTML += `<p class="enLinea" >Dni:<p class="enLinea">${listadoAlumnos[index].dni}<p class="enLinea" >Nombre:<p class="enLinea">${listadoAlumnos[index].nombre}<p class="enLinea" >Apellido:<p class="enLinea">${listadoAlumnos[index].apellido}</p></p></p></p></p>`;
   }
-  Toastify({
-    text: "Listado creado!",
-    position: "left",
-    duration: 3000,
-    gravity: "bottom",
-    style: {
-      background: " #ffc451",
-    },
-  }).showToast();
+  mostrarToastify("listado creado", "left",2000, "bottom")
+  // Toastify({
+  //   text: "Listado creado!",
+  //   position: "left",
+  //   duration: 3000,
+  //   gravity: "bottom",
+  //   style: {
+  //     background: " #ffc451",
+  //   },
+  // }).showToast();
 };
 
 let listAlum = document.getElementById("botonListado");
@@ -261,6 +262,25 @@ listAlum.onclick = mostrarlistadoAlumnos;
 /*--------------------------------------------------------------
 # fin listado de alumnos 
 --------------------------------------------------------------*/
+function mostrarSweetAlert(titulo,icono,mostrarBoton,tiempo) {
+  Swal.fire({
+    title: titulo,
+    icon: icono,
+    showConfirmButton: mostrarBoton,
+    timer: tiempo,
+  });
+}
+function mostrarToastify(texto,posicion,tiempo,altura,) {
+  Toastify({
+    text: texto,
+    position: posicion,
+    duration: tiempo,
+    gravity: altura,
+    style: {
+      background: " #ffc451",
+    },
+  }).showToast();
+}
 
 /*--------------------------------------------------------------
 #  Registro Usuario
