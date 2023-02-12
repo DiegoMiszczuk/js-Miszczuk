@@ -282,6 +282,49 @@ function mostrarToastify(texto,posicion,tiempo,altura,) {
   }).showToast();
 }
 
+
+/*--------------------------------------------------------------
+#  usuarios en json
+--------------------------------------------------------------*/
+let inicioSesion = document.getElementById("iniciarSesion")
+inicioSesion.onclick = pedirUsuario
+
+
+
+// let usuario = "diego"
+// let clave = 123
+
+
+async function pedirUsuario() {
+  let usuario = document.getElementById("usuario")
+  usuarioIngresado = usuario.value
+  let clave = document.getElementById("password")
+  claveIngresada = clave.value
+  const resp = await fetch("../assets/js/usuarios.json")
+  const usuarios = await resp.json()
+  // for (let index = 0; index < usuarios.length; index++) {
+  //   if (usuarios[index].usuario === usuarioIngresado && usuarios[index].pass === claveIngresada) {
+  //     console.log("hola")
+  //   }
+  //   else{
+  //     alert("no hay")
+  //   }
+  // }
+ usuarios.forEach(element => {
+  if (element.usuario === usuarioIngresado && element.pass === claveIngresada) {
+    console.log(element.usuario)
+    mostrarToastify("bienvenido " + element.usuario, "left",2000, "bottom")
+    // mostrarSweetAlert("bienvenido"+ element.usuario , "succsses")
+    let sesionActiva = document.getElementById("nombreUsuario")
+    sesionActiva.innerHTML = `${(element.usuario).toUpperCase()}`
+  }
+  
+});
+}
+
+/*--------------------------------------------------------------
+#  
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 #  Registro Usuario
 --------------------------------------------------------------*/

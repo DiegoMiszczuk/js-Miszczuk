@@ -41,7 +41,7 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center justify-content-lg-between">
+    <div  class="container d-flex align-items-center justify-content-lg-between">
       <h1 class="logo me-auto me-lg-0"><a href="index.html">E.Note<span>.</span></a></h1>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
@@ -51,7 +51,7 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <a href="#cta" class="get-started-btn scrollto">Ingresá</a>
+      <a id="nombreUsuario" href="#cta" class="get-started-btn scrollto ">Ingresá</a>
     </div>
   </header><!-- End Header -->
 
@@ -235,11 +235,11 @@
           <div class="text-center">
             <!-- <h3>Iniciar Sesión</h3> -->
             <input id="usuario" class="datosSesion cta-btn" type="text" label="Usuario" placeholder="Usuario"
-              onclick="limpiarRegistro()">
-            <input id="contraseña" class="datosSesion cta-btn" type="text" placeholder="Contraseña"
-              onclick="limpiarRegistro()">
+              >
+            <input id="password" class="datosSesion cta-btn" type="password" placeholder="Contraseña"
+             >
             <p> ingresa tus datos de acceso o creá tu cuenta</p>
-            <button id="iniciarSesion" class="cta-btn datosSesion">Iniciar sesión</button>
+            <button id="iniciarSesion" type="button" class="cta-btn datosSesion">Iniciar sesión</button>
             <button id="registrarse" class="cta-btn datosSesion">Registrarse</button>
           </div>
           <div class="my-3">
