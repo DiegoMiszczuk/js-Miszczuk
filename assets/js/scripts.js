@@ -136,7 +136,9 @@ const verNotasPromedio = () => {
       let resultadoPromedio = document.getElementById("contenedorPromedio");
       resultadoPromedio.innerHTML = `<p>El Dni consultado , no se encuentra registrado.</p>`;
     }
+    limpiarImputs("dniPromedio")
   }
+  
 };
 // function tostadaPromedio() {
 //   Toastify({
@@ -207,30 +209,15 @@ const busquedaDni = () => {
     let resultadoBusqueda = document.getElementById("contenedorBusqueda");
     resultadoBusqueda.innerHTML = `<p>El Dni consultado , no se encuentra registrado.</p>`;
     mostrarSweetAlert("alumno no encontrado", "warning", false, 2000)
+    limpiarImputs("dniBusqueda")
   }
 };
 
-// function alumnoEncontrado() {
-//   Swal.fire({
-//     icon: "success",
-//     title: "Alumno Encontrado!",
-//     showConfirmButton: false,
-//     timer: 2000,
-//   });
-// }
-// function alumnoNoEncontrado() {
-//   Swal.fire({
-//     icon: "error",
-//     title: "Alumno no Encontrado!",
-//     showConfirmButton: false,
-//     timer: 2000,
-//   });
-// }
 
-function verMensajeBusqueda() {
-  let guardarAlumno = document.getElementById("guardarAlumno");
-  mensaje.classList.add("d-block");
-}
+// function verMensajeBusqueda() {
+//   let guardarAlumno = document.getElementById("guardarAlumno");
+//   guardarAlumno.classList.add("d-block");
+// }
 
 function limpiarBusqueda() {
   mensaje.classList.remove("d-block");
@@ -253,15 +240,7 @@ const mostrarlistadoAlumnos = () => {
     resultadoListado.innerHTML += `<p class="enLinea" >Dni:<p class="enLinea">${listadoAlumnos[index].dni}<p class="enLinea" >Nombre:<p class="enLinea">${listadoAlumnos[index].nombre}<p class="enLinea" >Apellido:<p class="enLinea">${listadoAlumnos[index].apellido}</p></p></p></p></p>`;
   }
   mostrarToastify("listado creado", "left",2000, "bottom")
-  // Toastify({
-  //   text: "Listado creado!",
-  //   position: "left",
-  //   duration: 3000,
-  //   gravity: "bottom",
-  //   style: {
-  //     background: " #ffc451",
-  //   },
-  // }).showToast();
+ 
 };
 
 let listAlum = document.getElementById("botonListado");
@@ -290,18 +269,11 @@ function mostrarToastify(texto,posicion,tiempo,altura,) {
   }).showToast();
 }
 
-
 /*--------------------------------------------------------------
 #  usuarios en json
 --------------------------------------------------------------*/
 let inicioSesion = document.getElementById("iniciarSesion")
 inicioSesion.onclick = pedirUsuario
-
-
-
-// let usuario = "diego"
-// let clave = 123
-
 
 async function pedirUsuario() {
   let usuario = document.getElementById("usuario")
@@ -310,19 +282,11 @@ async function pedirUsuario() {
   claveIngresada = clave.value
   const resp = await fetch("../assets/js/usuarios.json")
   const usuarios = await resp.json()
-  // for (let index = 0; index < usuarios.length; index++) {
-  //   if (usuarios[index].usuario === usuarioIngresado && usuarios[index].pass === claveIngresada) {
-  //     console.log("hola")
-  //   }
-  //   else{
-  //     alert("no hay")
-  //   }
-  // }
+ 
  usuarios.forEach(element => {
   if (element.usuario === usuarioIngresado && element.pass === claveIngresada) {
     console.log(element.usuario)
     mostrarToastify("bienvenido " + element.usuario, "left",2000, "bottom")
-    // mostrarSweetAlert("bienvenido"+ element.usuario , "succsses")
     let sesionActiva = document.getElementById("nombreUsuario")
     sesionActiva.innerHTML = `${(element.usuario).toUpperCase()}<i class="bi bi-person"></i>`
   }
