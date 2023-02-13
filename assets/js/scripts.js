@@ -1,6 +1,6 @@
 let alumnos = [];
 
-const creaAlumno = (nombre, dni) => {
+const creaAlumno = (nombre, apellido, dni, nacionalidad, direccion, telefono, email) => {
   return alumnos.push(
     new Alumno(nombre, apellido, dni, nacionalidad, direccion, telefono, email)
   );
@@ -86,6 +86,7 @@ const cargarNotas = () => {
     limpiarImputs("nota1")
     limpiarImputs("nota2")
     limpiarImputs("nota3")
+    limpiarImputs("ingDni")
   }
   
 };
@@ -140,17 +141,7 @@ const verNotasPromedio = () => {
   }
   
 };
-// function tostadaPromedio() {
-//   Toastify({
-//     text: "Promedio Creado!",
-//     position: "left",
-//     duration: 3000,
-//     gravity: "bottom",
-//     style: {
-//       background: " #ffc451",
-//     },
-//   }).showToast();
-// }
+
 /*--------------------------------------------------------------
 # Nuevo Alumno
 --------------------------------------------------------------*/
@@ -277,7 +268,7 @@ inicioSesion.onclick = pedirUsuario
 
 async function pedirUsuario() {
   let usuario = document.getElementById("usuario")
-  usuarioIngresado = usuario.value
+  usuarioIngresado = usuario.value.toLowerCase()
   let clave = document.getElementById("password")
   claveIngresada = clave.value
   const resp = await fetch("../assets/js/usuarios.json")
@@ -285,7 +276,6 @@ async function pedirUsuario() {
  
  usuarios.forEach(element => {
   if (element.usuario === usuarioIngresado && element.pass === claveIngresada) {
-    console.log(element.usuario)
     mostrarToastify("bienvenido " + element.usuario, "left",2000, "bottom")
     let sesionActiva = document.getElementById("nombreUsuario")
     sesionActiva.innerHTML = `${(element.usuario).toUpperCase()}<i class="bi bi-person"></i>`

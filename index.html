@@ -9,8 +9,7 @@
   <meta content="" name="keywords">
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon_io/favicon-32x32.png">
-  <!-- <link rel="manifest" href="/site.webmanifest"> -->
-  <!-- Google Fonts -->
+   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
@@ -28,17 +27,8 @@
   <link href="assets/css/styleCustom.css" rel="stylesheet">
   <!-- Toastify CSS File -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
-  <!-- =======================================================
-  * Template Name: Gp - v4.10.0
-  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
-
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div  class="container d-flex align-items-center justify-content-lg-between">
@@ -54,9 +44,7 @@
       <a id="nombreUsuario" href="#cta" class="get-started-btn scrollto ">Ingresá</a>
     </div>
   </header><!-- End Header -->
-
   <!-- ======= Hero Section ======= -->
-
   <section id="hero" class="d-flex align-items-center justify-content-center">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
@@ -98,7 +86,6 @@
       </div>
     </div>
   </section><!-- End Hero -->
-
   <main id="main">
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -145,7 +132,6 @@
                       <input type="email" class="form-control" name="Email" id="Email" placeholder="Email"
                         onclick="limpiar()">
                     </div>
-
                     <div class="my-3">
                       <!-- <div class="loading">Cargando</div> -->
                       <div class="error-message"></div>
@@ -154,59 +140,35 @@
                     <div class="text-center "><button id="guardarAlumno" class="button" type="button"
                         onclick="nuevoAlumno()">Guardar Alumno</button></div>
                   </form>
-
                 </div>
-
               </div>
-
           </div>
     </section><!-- End Nuevo alumno -->
-
-    </div>
-    </div>
-
-    </div>
-    </section><!-- End About Section -->
-
-
-
+     </section><!-- End About Section -->
     <!-- ======= Materias Section ======= -->
     <section id="features" class="features">
       <div class="container" data-aos="fade-up">
-
-
         <div class="row">
           <div class="image col-lg-6 borderRadius" style='background-image: url("assets/img/fotor_2023-1-18_8_52_52.jpg");' alt="aula en clase"
             data-aos="fade-right"></div>
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
             <div class="section-title margenIzq margenTop">
               <h2>Calificar Alumno</h2>
-
             </div>
             <!-- <h3>Ingrese Dni del Alumno</h3> -->
             <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
-
             <input id="ingDni" class="form-control margenIzq margenBttm entradaNotas" type="text"
               placeholder="Ingrese Dni">
-
             <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-book icono"></i></div>
-
             <select id="matEle" class="form-control form-select form-select-sm entradaNotas"
               aria-label="Default select example">
-
               <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
-
               <option class="form-control" value="" disabled selected>Seleccione Materia</option>
-
               <option id="matematica" class="form-control" value="0">Matematicas</option>
-
               <option id="historia" class="form-control" value="1">Historia</option>
-
               <option id="lengua" class="form-control" value="2">Lengua</option>
             </select>
             <div class="icon-box mt-5 mt-lg- container" data-aos="zoom-in" data-aos-delay="150"></div>
-
-
             <!-- <h4 id="matematica">Matematicas</h4> -->
             <div id="calificar">
               <p class="textEvaluacion">Ingrese las notas de las 3 instancias de evaluación</p>
@@ -217,17 +179,11 @@
               <input id="nota3" class="form-control entradaNotas textCenter" type="text" onclick="limpiar()"
                 placeholder="Ingrese nota 3">
             </div>
-
-
             <div id="cargarNotas" class="text-center "><button id="cargarNotas" class="btnCargarNotas Contact"
                 type="button" onclick="cargarNotas(dni)">Cargar notas</button></div>
           </div>
-
         </div>
     </section><!-- End Features Section -->
-
-
-
     <!-- ======= inicio de sesión  Section ======= -->
     <section id="cta" class="cta">
       <div class="container" data-aos="zoom-in">
@@ -236,248 +192,146 @@
             <!-- <h3>Iniciar Sesión</h3> -->
             <input id="usuario" class="datosSesion cta-btn" type="text" label="Usuario" placeholder="Usuario"
               >
-            <input id="password" class="datosSesion cta-btn" type="password" placeholder="Contraseña"
-             >
+            <input id="password" class="datosSesion cta-btn" type="password" placeholder="Contraseña">
             <p> ingresa tus datos de acceso o creá tu cuenta</p>
             <button id="iniciarSesion" type="button" class="cta-btn datosSesion">Iniciar sesión</button>
             <button id="registrarse" type= "button" class="cta-btn datosSesion">Registrarse</button>
           </div>
           <div class="my-3">
-            <!-- <div class="loading">Cargando</div> -->
-            <!-- <div class="error-message"></div> -->
             <div id="mensaje2" class="sent-message2">Registro exitoso. Gracias!</div>
           </div>
         </form>
       </div>
     </section><!-- End inicio de sesión Section -->
-
-
-
     <!-- ======= Buscar alumno ======= -->
     <section id="buscar" class="about">
       <div class="container" data-aos="fade-up">
-
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
             <img src="assets/img/buscar-alumno.jpg" class="img-fluid alumnosEnClase borderRadius" alt="clase">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
-
             <section id="buscarAlumno" class="contact">
               <div class="container" data-aos="fade-up">
-
                 <div class="section-title">
                   <h2>Buscar alumno</h2>
-
                 </div>
                 <div class="col-lg-8 mt-5 mt-lg-0">
-
                   <form id="" action="" method="" role="form" class="">
-                    <div class="row">
-                      <!-- <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="" placeholder="Nombre" required onclick="limpiar()">
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="apellido" id="" placeholder="Apellido" onclick="limpiar()" >
-                </div>
-              </div> -->
+                    <div class="row">             
                       <div class="form-group mt-3">
                         <input type="text" class="form-control" name="subject" id="dniBusqueda" placeholder="Dni"
                           required onclick="limpiarBusqueda()">
                       </div>
-
-
                       <div class="my-3">
-                        <!-- <div class="loading">Cargando</div> -->
                         <div class="error-message"></div>
                         <div id="mensajebusqueda" class="sent-message">Alumno creado con exito. Gracias!</div>
                       </div>
                       <div class="text-center "><button id="buscarAlumno" class="button" type="button"
                           onclick="busquedaDni(dni)">Buscar</button></div>
                   </form>
-
-                  <!-- <div id="resultadoBusqueda" class="resultadoBusqueda"></div>
-                  <h3 id="nombreBusqueda"></h3>
-                  <h2 id="emailBusqueda"></h2> -->
-
-
                 </div>
                 <div id="contenedorBusqueda" class="form-group mt-3">
-
                 </div>
               </div>
-
           </div>
-
         </div>
     </section><!-- End Nuevo alumno -->
-
     </div>
     </div>
-
     </div>
     </section><!-- End About Section -->
-
-
-
     <!-- ======= Promedios Section ======= -->
     <section id="promedios" class="features">
       <div class="container" data-aos="fade-up">
-
         <div id="calificar" class="row">
           <div class="image col-lg-6 borderRadius" alt="primer dia de clases" style='background-image: url("assets/img/lego-aula-1.jpg");'
             data-aos="fade-right"></div>
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
             <div class="section-title margenIzq margenTop">
               <h2>Ver Promedios</h2>
-
-
             </div>
             <form action="">
-              <!-- <h3>Ingrese Dni del Alumno</h3> -->
               <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
-
               <input id="dniPromedio" class="form-control margenIzq margenBttm entradaNotas" type="text"
                 placeholder="Ingrese Dni">
-
               <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-book icono"></i></div>
-
               <select id="matElePromedio" class="form-control form-select form-select-sm entradaNotas"
                 aria-label="Default select example">
-
                 <div class="icon-box mt-5 mt-lg-0"><i class="bi bi-person"></i></div>
-
                 <option class="form-control" value="" disabled selected>Seleccione Materia</option>
-
                 <option id="matematica" class="form-control" value="0">Matematicas</option>
-
                 <option id="historia" class="form-control" value="1">Historia</option>
-
                 <option id="lengua" class="form-control" value="2">Lengua</option>
               </select>
               <div class="icon-box mt-5 mt-lg- container" data-aos="zoom-in" data-aos-delay="150"></div>
-
-
-
-
               <div id="" class="text-center "><button id="botonPromedio" class="btnPromedio Contact button"
                   type="button" onclick="verNotasPromedio(dni)">Ver promedio</button></div>
               <div id="contenedorPromedio" class="form-group mt-3">
-
               </div>
           </div>
-
-
         </div>
         </form>
-
-
       </div>
     </section><!-- End Promedios Section -->
-
-
-
     <!-- ======= Separador ======= -->
     <section id="cta2" class="cta2">
       <div class="container" data-aos="zoom-in">
-
         <div class="text-center">
-
         </div>
-
       </div>
     </section><!-- Fin separador -->
-
-
     <!-- ======= Listado de  alumnos ======= -->
     <section id="listado" class="about">
       <div class="container" data-aos="fade-up">
-
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
             <img src="assets/img/school_classroom_by_legoejmbuilder_del7itf-pre.jpg" class="img-fluid alumnosEnClase borderRadius"
               alt="clase en progreso">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
-
             <section id="buscarAlumno" class="contact">
               <div class="container" data-aos="fade-up">
-
                 <div class="section-title">
                   <h2>Listado de alumnos</h2>
-
                 </div>
                 <div class="col-lg-8 mt-5 mt-lg-0">
-
                   <form id="" action="" method="" role="form" class="">
                     <div class="row">
-                      <!-- <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="" placeholder="Nombre" required onclick="limpiar()">
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="apellido" id="" placeholder="Apellido" onclick="limpiar()" >
-                </div>
-              </div> -->
-                      <!-- <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="subject" id="dniBusqueda" placeholder="Dni"
-                          required onclick="limpiarBusqueda()">
-                      </div> -->
-
-
+             
                       <div class="my-3">
-
                         <div class="error-message"></div>
-
                       </div>
                       <div class="text-center ">
                         <button id="botonListado" class="button" type="button" onclick=limpiar()>Ver listado de
                           Alumnos</button>
                       </div>
                   </form>
-
                   <div id="" class="contenedorListado"></div>
                   <h3 id="nombreBusqueda"></h3>
                   <h2 id="emailBusqueda"></h2>
-
-
                 </div>
                 <div id="contenedorListado" class="form-group mt-3">
-
                 </div>
               </div>
-
           </div>
-
         </div>
     </section><!-- End Nuevo alumno -->
-
     </div>
     </div>
-
     </div>
     </section><!-- End About Section -->
-
     <!-- ======= Testimonials Section ======= -->
-
     <section id="testimonials" class="testimonials">
-
       <div class="container" data-aos="fade-up">
-
         <div data-aos="fade-up" data-aos-delay="150">
           <div class="col-xl-6 col-lg-8">
             <h1 class="text-light">Nuestro equipo<span>:</span></h1>
-            <!-- <h2>We are team of talented digital marketers</h2> -->
           </div>
         </div>
-        <!-- <div class="section-title">
-          <h2 >Team</h2>
-          <p>Check our Team</p>
-        </div> -->
         <div class="container" data-aos="zoom-in">
-
           <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper">
-
               <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
@@ -490,7 +344,6 @@
                   </p>
                 </div>
               </div><!-- End testimonial item -->
-
               <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
@@ -503,7 +356,6 @@
                   </p>
                 </div>
               </div><!-- End testimonial item -->
-
               <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
@@ -516,7 +368,6 @@
                   </p>
                 </div>
               </div><!-- End testimonial item -->
-
               <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
@@ -529,7 +380,6 @@
                   </p>
                 </div>
               </div><!-- End testimonial item -->
-
               <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
@@ -545,115 +395,21 @@
             </div>
             <div class="swiper-pagination"></div>
           </div>
-
         </div>
     </section><!-- End Testimonials Section -->
-
-    <!-- ======= Team Section ======= 
-    <section id="team" class="team">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Team</h2>
-          <p>Check our Team</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="100">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="200">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="300">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="400">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section> -->
-
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Contacto</h2>
           <p>Ubicación</p>
         </div>
-
         <div>
           <iframe style="border:0; width: 100%; height: 270px;"
             src="https://maps.google.com/maps?q=argentina%20obelisco&t=&z=13&ie=UTF8&iwloc=&output=embed"
             frameborder="0" allowfullscreen></iframe>
         </div>
-
         <div class="row mt-5">
-
           <div class="col-lg-4">
             <div class="info">
               <div class="address">
@@ -661,25 +417,19 @@
                 <h4>Dirección</h4>
                 <p>Av. Corrientes y 9 de Julio, Bs As. Argentina</p>
               </div>
-
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
                 <p>gestion-enote@enote.com</p>
               </div>
-
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Llamenos:</h4>
                 <p>11 5589 5548</p>
               </div>
-
             </div>
-
           </div>
-
           <div class="col-lg-8 mt-5 mt-lg-0">
-
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
@@ -695,23 +445,14 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
               </div>
-              <!-- <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div> -->
+             
               <div class="text-center"><button type="submit">Enviar mensaje</button></div>
             </form>
-
           </div>
-
         </div>
-
       </div>
     </section><!-- End Contact Section -->
-
   </main><!-- End #main -->
-
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">
@@ -742,12 +483,8 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#testimonials">Nosotros</a></li>
-              <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li> -->
             </ul>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Nuestros Servicios</h4>
             <ul>
@@ -758,20 +495,16 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Diseño Grafico</a></li>
             </ul>
           </div>
-
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Novedades!</h4>
             <p>Ingrese su Email para recibir nuestras novedades!</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribirse">
             </form>
-
           </div>
-
         </div>
       </div>
     </div>
-
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>Gp</span></strong>. All Rights Reserved
@@ -785,29 +518,21 @@
       </div>
     </div>
   </footer><!-- End Footer -->
-
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
-
   <!-- Vendor JS Files -->
-  <!-- <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script> -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
-
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="./assets/js/scripts.js"></script>
-
   <!-- Sweet alert File -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
- <!-- Toastify File -->
+<!-- Toastify File -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
 </body>
-
 </html>
