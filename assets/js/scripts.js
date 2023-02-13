@@ -83,8 +83,16 @@ const cargarNotas = () => {
       alumnos[index].materias[materiaElegida].nota3 = notaInst3;
     }
     mostrarSweetAlert("Materia calificada con exito", "success", false,2000);
+    limpiarImputs("nota1")
+    limpiarImputs("nota2")
+    limpiarImputs("nota3")
   }
+  
 };
+
+function limpiarImputs(id) {
+  document.getElementById(id).value = ""
+}
 // function materiaCalificada() {
 //   Swal.fire({
 //     icon: "success",
@@ -316,9 +324,10 @@ async function pedirUsuario() {
     mostrarToastify("bienvenido " + element.usuario, "left",2000, "bottom")
     // mostrarSweetAlert("bienvenido"+ element.usuario , "succsses")
     let sesionActiva = document.getElementById("nombreUsuario")
-    sesionActiva.innerHTML = `${(element.usuario).toUpperCase()}`
+    sesionActiva.innerHTML = `${(element.usuario).toUpperCase()}<i class="bi bi-person"></i>`
   }
-  
+  limpiarImputs("usuario")
+  limpiarImputs("password")
 });
 }
 
