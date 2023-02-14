@@ -1,4 +1,12 @@
-let alumnos = [];
+let alumnos 
+
+let usuarioLs = JSON.parse(localStorage.getItem("alumnos"))
+
+if (usuarioLs) {
+  alumnos = usuarioLs
+}else{
+  alumnos = []
+}
 
 const creaAlumno = (nombre, apellido, dni, nacionalidad, direccion, telefono, email) => {
   return alumnos.push(
