@@ -1,13 +1,15 @@
 let alumnos 
 
-let usuarioLs = JSON.parse(localStorage.getItem("alumnos"))
+let alumnosLs = JSON.parse(localStorage.getItem("alumnos"))
 
-if (usuarioLs) {
-  alumnos = usuarioLs
+if (alumnosLs) {
+  alumnos = alumnosLs
 }else{
   alumnos = []
 }
 
+console.log(alumnos)
+console.log(alumnosLs)
 const creaAlumno = (nombre, apellido, dni, nacionalidad, direccion, telefono, email) => {
   return alumnos.push(
     new Alumno(nombre, apellido, dni, nacionalidad, direccion, telefono, email)
@@ -25,13 +27,15 @@ class Materia {
   nota1 = 0;
   nota2 = 0;
   nota3 = 0;
-  promedio() {
+
+  }
+
+    const promedio = (nota1,nota2,nota3)=> {
     return (
-      (Number(this.nota1) + Number(this.nota2) + Number(this.nota3)) /
+      (Number(nota1) + Number(nota2) + Number(nota3)) /
       3
     ).toFixed(2);
-  }
-}
+    }
 const _materias = [];
 
 _materias.push(new Materia("Matematicas"));
@@ -77,19 +81,30 @@ const cargarNotas = () => {
 
   let dniIngresado = document.getElementById("ingDni");
   let dni = dniIngresado.value;
+
+  let calificacion1 = document.getElementById("nota1");
+  let notaInst1 = calificacion1.value;
+  let calificacion2 = document.getElementById("nota2");
+  let notaInst2 = calificacion2.value;
+  let calificacion3 = document.getElementById("nota3");
+  let notaInst3 = calificacion3.value;
+
   for (let index = 0; index < alumnos.length; index++) {
     if (dni === alumnos[index].dni) {
-      let calificacion1 = document.getElementById("nota1");
-      let notaInst1 = calificacion1.value;
-      let calificacion2 = document.getElementById("nota2");
-      let notaInst2 = calificacion2.value;
-      let calificacion3 = document.getElementById("nota3");
-      let notaInst3 = calificacion3.value;
+    
+      console.log(notaInst1)
+      console.log(notaInst2)
+      console.log(notaInst3)
 
       alumnos[index].materias[materiaElegida].nota1 = notaInst1;
       alumnos[index].materias[materiaElegida].nota2 = notaInst2;
       alumnos[index].materias[materiaElegida].nota3 = notaInst3;
+     console.log(alumnos)
+   
     }
+    const alumnosJson = JSON.stringify(alumnos);
+  localStorage.setItem("alumnos", alumnosJson);
+   
     mostrarSweetAlert("Materia calificada con exito", "success", false,2000);
     limpiarImputs("nota1")
     limpiarImputs("nota2")
@@ -123,8 +138,12 @@ const verNotasPromedio = () => {
   materiaElegidaPromedio = opcionMateriaPromedio.value;
   let dniIngresadoPromedio = document.getElementById("dniPromedio");
   let dni = dniIngresadoPromedio.value;
+  console.log(alumnos)
   for (let index = 0; index < alumnos.length; index++) {
+    console.log(alumnos)
+    console.log(alumnos[index].dni)
     if (dni === alumnos[index].dni) {
+      console.log(alumnos)
       mostrarToastify("promedio creado","left",2000,"bottom");
       let resultadoPromedio = document.getElementById("contenedorPromedio");
       resultadoPromedio.innerHTML = `<p class="enLinea" >Nombre:<p class="enLinea">${
@@ -133,9 +152,7 @@ const verNotasPromedio = () => {
       <p class="enLinea" >Apellido:<p class="enLinea">${
         alumnos[index].apellido
       }</p></p>
-      <p class="enLinea" >Promedio:<p class="enLinea">${alumnos[index].materias[
-        materiaElegidaPromedio
-      ].promedio(
+      <p class="enLinea" >Promedio:<p class="enLinea">${promedio(
         alumnos[index].materias[materiaElegidaPromedio].nota1,
         alumnos[index].materias[materiaElegidaPromedio].nota2,
         alumnos[index].materias[materiaElegidaPromedio].nota3
@@ -169,6 +186,8 @@ function nuevoAlumno() {
   verMensaje();
   const alumnosJson = JSON.stringify(alumnos);
   localStorage.setItem("alumnos", alumnosJson);
+  console.log(alumnos)
+  console.log(alumnosLs)
 }
 
 function verMensaje() {
@@ -232,7 +251,7 @@ function limpiarBusqueda() {
 --------------------------------------------------------------*/
 
 let listadoAlumnos = JSON.parse(localStorage.getItem("alumnos"));
-
+console.log(listadoAlumnos)
 const mostrarlistadoAlumnos = () => {
   for (let index = 0; index < listadoAlumnos.length; index++) {
     let resultadoListado = document.getElementById("contenedorListado");
