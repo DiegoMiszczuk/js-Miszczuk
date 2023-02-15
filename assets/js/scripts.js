@@ -1,16 +1,22 @@
-let alumnos 
+let alumnos;
 
-let alumnosLs = JSON.parse(localStorage.getItem("alumnos"))
+let alumnosLs = JSON.parse(localStorage.getItem("alumnos"));
 
 if (alumnosLs) {
-  alumnos = alumnosLs
-}else{
-  alumnos = []
+  alumnos = alumnosLs;
+} else {
+  alumnos = [];
 }
 
-console.log(alumnos)
-console.log(alumnosLs)
-const creaAlumno = (nombre, apellido, dni, nacionalidad, direccion, telefono, email) => {
+const creaAlumno = (
+  nombre,
+  apellido,
+  dni,
+  nacionalidad,
+  direccion,
+  telefono,
+  email
+) => {
   return alumnos.push(
     new Alumno(nombre, apellido, dni, nacionalidad, direccion, telefono, email)
   );
@@ -27,15 +33,11 @@ class Materia {
   nota1 = 0;
   nota2 = 0;
   nota3 = 0;
+}
 
-  }
-
-    const promedio = (nota1,nota2,nota3)=> {
-    return (
-      (Number(nota1) + Number(nota2) + Number(nota3)) /
-      3
-    ).toFixed(2);
-    }
+const promedio = (nota1, nota2, nota3) => {
+  return ((Number(nota1) + Number(nota2) + Number(nota3)) / 3).toFixed(2);
+};
 const _materias = [];
 
 _materias.push(new Materia("Matematicas"));
@@ -78,73 +80,53 @@ class Alumno {
 const cargarNotas = () => {
   let opcionMateria = document.getElementById("matEle");
   materiaElegida = opcionMateria.value;
-
   let dniIngresado = document.getElementById("ingDni");
   let dni = dniIngresado.value;
-
   let calificacion1 = document.getElementById("nota1");
   let notaInst1 = calificacion1.value;
   let calificacion2 = document.getElementById("nota2");
   let notaInst2 = calificacion2.value;
   let calificacion3 = document.getElementById("nota3");
   let notaInst3 = calificacion3.value;
-
+  let calificado = false;
   for (let index = 0; index < alumnos.length; index++) {
     if (dni === alumnos[index].dni) {
-    
-      console.log(notaInst1)
-      console.log(notaInst2)
-      console.log(notaInst3)
-
+      calificado = true;
       alumnos[index].materias[materiaElegida].nota1 = notaInst1;
       alumnos[index].materias[materiaElegida].nota2 = notaInst2;
       alumnos[index].materias[materiaElegida].nota3 = notaInst3;
-     console.log(alumnos)
-   
     }
     const alumnosJson = JSON.stringify(alumnos);
-  localStorage.setItem("alumnos", alumnosJson);
-   
-    mostrarSweetAlert("Materia calificada con exito", "success", false,2000);
-    limpiarImputs("nota1")
-    limpiarImputs("nota2")
-    limpiarImputs("nota3")
-    limpiarImputs("ingDni")
+    localStorage.setItem("alumnos", alumnosJson);
+    mostrarSweetAlert("Materia calificada con exito", "success", false, 2000);
+    limpiarImputs("nota1");
+    limpiarImputs("nota2");
+    limpiarImputs("nota3");
+    limpiarImputs("ingDni");
   }
-  
+  if (!calificado) {
+    mostrarSweetAlert("Alumno no encontrado!!", "error", false, 2000);
+  }
 };
 
 function limpiarImputs(id) {
-  document.getElementById(id).value = ""
+  document.getElementById(id).value = "";
 }
-// function materiaCalificada() {
-//   Swal.fire({
-//     icon: "success",
-//     title: "Materia Calificada con exito!!",
-//     showConfirmButton: false,
-//     timer: 2000,
-//   });
-// }
-
-/*--------------------------------------------------------------
-# Fin calificar alumno
---------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Ver promedios
 --------------------------------------------------------------*/
+
 const verNotasPromedio = () => {
   let opcionMateriaPromedio = document.getElementById("matElePromedio");
   materiaElegidaPromedio = opcionMateriaPromedio.value;
   let dniIngresadoPromedio = document.getElementById("dniPromedio");
   let dni = dniIngresadoPromedio.value;
-  console.log(alumnos)
+  let encontrado = false;
   for (let index = 0; index < alumnos.length; index++) {
-    console.log(alumnos)
-    console.log(alumnos[index].dni)
     if (dni === alumnos[index].dni) {
-      console.log(alumnos)
-      mostrarToastify("promedio creado","left",2000,"bottom");
+      encontrado = true;
+      mostrarToastify("promedio creado", "left", 2000, "bottom");
       let resultadoPromedio = document.getElementById("contenedorPromedio");
       resultadoPromedio.innerHTML = `<p class="enLinea" >Nombre:<p class="enLinea">${
         alumnos[index].nombre
@@ -158,13 +140,13 @@ const verNotasPromedio = () => {
         alumnos[index].materias[materiaElegidaPromedio].nota3
       )}</p></p>
       `;
-    } else {
-      let resultadoPromedio = document.getElementById("contenedorPromedio");
-      resultadoPromedio.innerHTML = `<p>El Dni consultado , no se encuentra registrado.</p>`;
     }
-    limpiarImputs("dniPromedio")
+    limpiarImputs("dniPromedio");
   }
-  
+  if (!encontrado) {
+    let resultadoPromedio = document.getElementById("contenedorPromedio");
+    resultadoPromedio.innerHTML = `<p>El Dni consultado , no se encuentra registrado.</p>`;
+  }
 };
 
 /*--------------------------------------------------------------
@@ -186,13 +168,10 @@ function nuevoAlumno() {
   verMensaje();
   const alumnosJson = JSON.stringify(alumnos);
   localStorage.setItem("alumnos", alumnosJson);
-  console.log(alumnos)
-  console.log(alumnosLs)
 }
 
 function verMensaje() {
-  let guardarAlumno = document.getElementById("guardarAlumno");
-  mensaje.classList.add("d-block");
+   mensaje.classList.add("d-block");
 }
 
 function limpiar() {
@@ -221,27 +200,21 @@ const busquedaDni = () => {
       <p class="enLinea" >Nacionalidad:<p class="enLinea">${alumnos[index].nacionalidad}</p></p>
       <p class="enLinea" >Telefono:<p class="enLinea">${alumnos[index].telefono}</p></p>
       <p class="enLinea" >Email:<p class="enLinea">${alumnos[index].email}</p></p>`;
+        limpiarImputs("dniBusqueda");
       }
     }
   } else {
     let resultadoBusqueda = document.getElementById("contenedorBusqueda");
     resultadoBusqueda.innerHTML = `<p>El Dni consultado , no se encuentra registrado.</p>`;
-    mostrarSweetAlert("alumno no encontrado", "warning", false, 2000)
-    limpiarImputs("dniBusqueda")
+    mostrarSweetAlert("alumno no encontrado", "error", false, 2000);
+    limpiarImputs("dniBusqueda");
   }
 };
-
-
-// function verMensajeBusqueda() {
-//   let guardarAlumno = document.getElementById("guardarAlumno");
-//   guardarAlumno.classList.add("d-block");
-// }
 
 function limpiarBusqueda() {
   mensaje.classList.remove("d-block");
 }
 
-//
 /*--------------------------------------------------------------
 # fin buscar alumno 
 --------------------------------------------------------------*/
@@ -250,15 +223,19 @@ function limpiarBusqueda() {
 # Listado de alumnos 
 --------------------------------------------------------------*/
 
-let listadoAlumnos = JSON.parse(localStorage.getItem("alumnos"));
-console.log(listadoAlumnos)
 const mostrarlistadoAlumnos = () => {
+  let listadoAlumnos = JSON.parse(localStorage.getItem("alumnos"));
+  if (listadoAlumnos) {
+    alumnos = listadoAlumnos;
+    mostrarToastify("listado creado", "left", 2000, "bottom");
+  } else {
+    mostrarToastify("No hay alumnos para listar!", "left", 2000, "bottom");
+    listadoAlumnos = alumnos;
+  }
   for (let index = 0; index < listadoAlumnos.length; index++) {
     let resultadoListado = document.getElementById("contenedorListado");
     resultadoListado.innerHTML += `<p class="enLinea" >Dni:<p class="enLinea">${listadoAlumnos[index].dni}<p class="enLinea" >Nombre:<p class="enLinea">${listadoAlumnos[index].nombre}<p class="enLinea" >Apellido:<p class="enLinea">${listadoAlumnos[index].apellido}</p></p></p></p></p>`;
   }
-  mostrarToastify("listado creado", "left",2000, "bottom")
- 
 };
 
 let listAlum = document.getElementById("botonListado");
@@ -267,7 +244,11 @@ listAlum.onclick = mostrarlistadoAlumnos;
 /*--------------------------------------------------------------
 # fin listado de alumnos 
 --------------------------------------------------------------*/
-function mostrarSweetAlert(titulo,icono,mostrarBoton,tiempo) {
+/*--------------------------------------------------------------
+# sweet alert y toastify
+--------------------------------------------------------------*/
+
+function mostrarSweetAlert(titulo, icono, mostrarBoton, tiempo) {
   Swal.fire({
     title: titulo,
     icon: icono,
@@ -275,7 +256,7 @@ function mostrarSweetAlert(titulo,icono,mostrarBoton,tiempo) {
     timer: tiempo,
   });
 }
-function mostrarToastify(texto,posicion,tiempo,altura,) {
+function mostrarToastify(texto, posicion, tiempo, altura) {
   Toastify({
     text: texto,
     position: posicion,
@@ -290,94 +271,36 @@ function mostrarToastify(texto,posicion,tiempo,altura,) {
 /*--------------------------------------------------------------
 #  usuarios en json
 --------------------------------------------------------------*/
-let inicioSesion = document.getElementById("iniciarSesion")
-inicioSesion.onclick = pedirUsuario
+let inicioSesion = document.getElementById("iniciarSesion");
+inicioSesion.onclick = pedirUsuario;
 
 async function pedirUsuario() {
-  let usuario = document.getElementById("usuario")
-  usuarioIngresado = usuario.value.toLowerCase()
-  let clave = document.getElementById("password")
-  claveIngresada = clave.value
-  const resp = await fetch("../assets/js/usuarios.json")
-  const usuarios = await resp.json()
- 
- usuarios.forEach(element => {
-  if (element.usuario === usuarioIngresado && element.pass === claveIngresada) {
-    mostrarToastify("bienvenido " + element.usuario, "left",2000, "bottom")
-    let sesionActiva = document.getElementById("nombreUsuario")
-    sesionActiva.innerHTML = `${(element.usuario).toUpperCase()}<i class="bi bi-person"></i>`
-  }
-  limpiarImputs("usuario")
-  limpiarImputs("password")
-});
+  let usuario = document.getElementById("usuario");
+  usuarioIngresado = usuario.value.toLowerCase();
+  let clave = document.getElementById("password");
+  claveIngresada = clave.value;
+  const resp = await fetch("../assets/js/usuarios.json");
+  const usuarios = await resp.json();
+
+  usuarios.forEach((element) => {
+    if (
+      element.usuario === usuarioIngresado &&
+      element.pass === claveIngresada
+    ) {
+      mostrarToastify(
+        "bienvenido " + element.usuario.toUpperCase(),
+        "left",
+        2000,
+        "bottom"
+      );
+      let sesionActiva = document.getElementById("nombreUsuario");
+      sesionActiva.innerHTML = `${element.usuario.toUpperCase()}<i class="bi bi-person"></i>`;
+    }
+    limpiarImputs("usuario");
+    limpiarImputs("password");
+  });
 }
 
 /*--------------------------------------------------------------
 #  
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-#  Registro Usuario
---------------------------------------------------------------*/
-
-// let usuario = document.getElementById("usuario")
-// let contraseña = document.getElementById("contraseña")
-
-// let usuarios = []
-
-// class Usuario {
-//   constructor(usuario,contraseña) {
-//     this.usuario = usuario;
-//     this.contraseña = contraseña;
-
-//   }
-// }
-
-// function nuevoUsuario() {
-//   usuarios.push(
-//     new Usuario(
-//       document.getElementById("usuario").value,
-//       document.getElementById("contraseña").value,
-
-//       ))
-//       const usuariosJson = JSON.stringify(usuarios);
-//       localStorage.setItem("usuarios", usuariosJson);
-//       verMensajeRegistro()
-//       datosUsuario.reset()
-
-//     }
-
-//    console.log(usuarios)
-
-// let ingreso = document.getElementById("registrarse")
-// ingreso.onclick = nuevoUsuario
-
-// function verMensajeRegistro() {
-//   let guardarAlumno = document.getElementById("guardarAlumno");
-//   mensaje2.classList.add("d-block");
-// }
-
-// function limpiarRegistro() {
-//   mensaje2.classList.remove("d-block");
-// }
-/*--------------------------------------------------------------
-#  Fin Registro Usuario
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-#  Inicio Sesión
---------------------------------------------------------------*/
-
-// let registrados = JSON.parse(localStorage.getItem("usuarios"));
-
-// function ingreso(usuario,contraseña) {
-//   for (let index = 0; index < registrados.length; index++) {
-//     if (registrados[index].usuario === usuario && registrados[index].contraseña === contraseña) {
-//       alert("hola")
-//     } else {
-//       alert("chau")
-//     }
-
-//   }
-// }
-
-// let inicioSesion = document.getElementById("iniciarSesion")
-// inicioSesion.onclick = ingreso
