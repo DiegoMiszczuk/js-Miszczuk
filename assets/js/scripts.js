@@ -1,26 +1,8 @@
-let alumnos;
 
-let alumnosLs = JSON.parse(localStorage.getItem("alumnos"));
 
-if (alumnosLs) {
-  alumnos = alumnosLs;
-} else {
-  alumnos = [];
-}
+let alumnos = JSON.parse(localStorage.getItem("alumnos")) || []
 
-const creaAlumno = (
-  nombre,
-  apellido,
-  dni,
-  nacionalidad,
-  direccion,
-  telefono,
-  email
-) => {
-  return alumnos.push(
-    new Alumno(nombre, apellido, dni, nacionalidad, direccion, telefono, email)
-  );
-};
+
 
 /*--------------------------------------------------------------
 # Crear Materias
@@ -225,6 +207,7 @@ function limpiarBusqueda() {
 
 const mostrarlistadoAlumnos = () => {
   let listadoAlumnos = JSON.parse(localStorage.getItem("alumnos"));
+  
   if (listadoAlumnos) {
     alumnos = listadoAlumnos;
     mostrarToastify("listado creado", "left", 2000, "bottom");
@@ -281,12 +264,13 @@ async function pedirUsuario() {
   claveIngresada = clave.value;
   const resp = await fetch("../assets/js/usuarios.json");
   const usuarios = await resp.json();
-
+  let usuarioJs = false
   usuarios.forEach((element) => {
     if (
       element.usuario === usuarioIngresado &&
       element.pass === claveIngresada
     ) {
+      usuarioJs = true
       mostrarToastify(
         "bienvenido " + element.usuario.toUpperCase(),
         "left",
@@ -299,6 +283,9 @@ async function pedirUsuario() {
     limpiarImputs("usuario");
     limpiarImputs("password");
   });
+  if (!usuarioJs) {
+    mostrarSweetAlert("Usuario y/o contraseña incorrecta", "error", false, 2000);
+  }
 }
 
 /*--------------------------------------------------------------
